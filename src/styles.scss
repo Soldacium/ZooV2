@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lexend+Giga|Ropa+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Ropa Sans', sans-serif;
+    overflow-x: hidden;
+    background-color: black;
+    
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  textarea{
+      font-family: 'Poppins', sans-serif;
+  }
+  
+  input{
+      &:focus{
+          outline: none;
+      }
+  }
+  
+  html{
+      /*
+      --header1: calc(2.4rem + 1.1vw);
+      --header2: calc(2.1rem + 0.9vw);
+      --header3: calc(1.7rem + 0.7vw);
+      --header4: calc(1.2rem + 0.6vw);
+      --header5: calc(0.7rem + 0.5vw);
+      --text: calc(0.6rem + 0.4vw);
+      --biggerText: calc(1rem + 0.6vw);
+      --biggestText: calc(1.4rem + 0.9vw);
+      --monsterText: calc(1.8rem + 1.1vw);
+      --gray-text: rgb(80,80,80);
+      */
+  
+    --colorPrimary: #5CDB95;
+    --colorSecondary: #05386B;
+    --colorAccent: #379683;
+      
+      scroll-behavior: smooth;
+  
+      --smooth-shadow-small: 0 0.5px 0.5px rgba(0, 0, 0, 0.05), 
+      0 1px 1px rgba(0,0,0,0.05), 
+      0 2px 2px rgba(0,0,0,0.05), 
+      0 4px 4px rgba(0,0,0,0.05),
+      0 8px 8px rgba(0,0,0,0.05);
+  
+      --smooth-shadow-medium: 0 1px 1px rgba(0, 0, 0, 0.065), 
+      0 2px 2px rgba(0,0,0,0.065), 
+      0 3px 3px rgba(0,0,0,0.065), 
+      0 5px 5px rgba(0,0,0,0.065),
+      0 8px 8px rgba(0,0,0,0.065);
+  
+      --smooth-shadow-big: 0 1px 1px rgba(0, 0, 0, 0.08), 
+      0 2px 2px rgba(0,0,0,0.08), 
+      0 4px 4px rgba(0,0,0,0.08), 
+      0 8px 8px rgba(0,0,0,0.08),
+      0 16px 16px rgba(0,0,0,0.08);
+  }

@@ -1,7 +1,40 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { WelcomeComponent } from './welcome/welcome.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { TicketsComponent } from './tickets/tickets.component';
+import { FishFightingComponent } from './fishes/fish-fighting/fish-fighting.component';
+import { FishesComponent } from './fishes/fishes.component';
+import { FishGoldenComponent } from './fishes/fish-golden/fish-golden.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'welcome'
+  },
+  {
+    path: 'welcome',
+    component: WelcomeComponent
+  },
+  {
+    path: 'fishes',
+    component: FishesComponent,
+    children: [
+      { path: 'fighting', component: FishFightingComponent, data: {animation: 'WelcomePage'} },
+      { path: 'golden', component: FishGoldenComponent, data: {animation: 'PostsListPage'}},
+    ]
+  },
+  {
+    path: 'tickets',
+    component: TicketsComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

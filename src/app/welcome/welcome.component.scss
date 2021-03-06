@@ -1,235 +1,255 @@
-
 main{
+    position: relative;
     width: 100%;
-    height: 100%;
-}
-.section1{
-
-    width: 100%;
-    height: 100%;
-    background: url('../../assets/images/BGs/BG_aquarium_3.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
-    position: relative;
-    font-family: 'Ropa Sans', sans-serif;
-    
-    
+    flex-direction: column;
+
 }
 
-.textOne{
-    
-    background: linear-gradient(rgb(0, 79, 85),rgba(53, 242, 248, 0)) ;
-    
-    width: 11vw;
+section {
     position: relative;
-    top: 0;
-    left: 0;
-    height: 100%;
-    animation: textOneAnim 0.5s;
-    transition: 0.2s all;
-    color: white;
-    
+    width: 100%;
+    height: 100vh;
+    background-color: #5CDB95;
+    // animation: background-animation 4s ease;
 }
 
-@keyframes textOneAnim{
-    from{
-        left: -20vw;
-    }to{
-        left: 0;
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .text{
+        font-size: 10rem;
+        color: #5CDB95;
+        animation: text-animation 3s ease forwards;
+        padding: 5rem;
+        z-index: 10;
+    }
+
+    .next{
+        display: block;
+        position: relative;
+        
+        background: linear-gradient(transparent,rgb(255, 208, 0),rgb(255, 217, 0));
+        background: transparent;
+        
+        color: rgb(253, 253, 253);
+        background-clip: text;
+        border: none;
+        font-size: 2.5rem;
+        font-weight: 500;
+        padding: 2rem 2rem;
+
+        .next-square{
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border: 4px solid;
+            border-color: var(--colorSecondary);
+            transform: rotateZ(45deg);
+        }
+    }
+
+
+    .water-top{
+        position: absolute;
+        left: 0vw;
+        top: 0;
+        width: 20vw;
+        .wave{
+            margin-top: 0.3rem;
+        }
+        .wave:nth-of-type(1){left: 0vw;}
+        .wave:nth-of-type(2){left: -3vw;}
+        .wave:nth-of-type(3){left: -6vw;}
+        .wave:nth-of-type(4){left: -9vw;}
+        .wave:nth-of-type(5){left: -12vw;}
+        .wave:nth-of-type(6){left: -15vw;}
+        .wave:nth-of-type(7){left: -18vw;}
+    }
+
+    .water-bottom{
+        position: absolute;
+        right: 0vw;
+        bottom: 0;
+        width: 20vw;
+        .wave{
+            margin-bottom: 0.3rem;
+        }
+        .wave:nth-of-type(7){right: 0vw;}
+        .wave:nth-of-type(6){right: -3vw;}
+        .wave:nth-of-type(5){right: -6vw;}
+        .wave:nth-of-type(4){right: -9vw;}
+        .wave:nth-of-type(3){right: -12vw;}
+        .wave:nth-of-type(2){right: -15vw;}
+        .wave:nth-of-type(1){right: -18vw;}   
+    }
+
+    
+    .wave{
+        position: relative;
+        width: 100%;
+        height: 1.5rem;
+        background-image: url('../../assets/images/BGs/wave2.png');
+        background-size: contain;
     }
 }
-.textOne p{
-    transform: rotate(90deg) translateX(50%);
-    font-size: 5rem;
-    line-height: 4rem;
-    margin: 0;
+
+@keyframes background-animation{
+    0%{
+        background-color: rgb(0, 103, 167);
+    }
+    100%{
+        background-color: rgb(0, 36, 59);
+    }
+}
+
+@keyframes text-animation{
+    0%{
+        text-shadow: none;
+    } 50%{
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.16), 
+        0 2px 3px rgba(0,0,0,0.16), 
+        0 4px 6px rgba(0,0,0,0.16), 
+        0 8px 12px rgba(0,0,0,0.16),
+        0 16px 24px rgba(0,0,0,0.16);
+        color: var(--colorPrimary);
+    } 100%{
+        //color: var(--colorSecondary);
+        color: white;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.16), 
+        0 2px 3px rgba(0,0,0,0.16), 
+        0 4px 6px rgba(0,0,0,0.16), 
+        0 8px 12px rgba(0,0,0,0.16),
+        0 16px 24px rgba(0,0,0,0.16);
+    }
+}
+
+.about{
+
+}
+
+.attractions{
+
+    padding: 2rem;
+
+    .coral{
+        position: absolute;
+        left: 5%;
+        bottom: 5%;
+        width: 40vw;
+        height: 40vw;
+        background-image: url('../../assets/images/BGs/coral2-blue.png');
+        background-size: contain;
+        transform: rotate(-15deg);
+    }
+    .shape {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--colorSecondary);
+        clip-path: polygon(56% 0%, 100% 0, 100% 100%, 0 100%, 0 100%);
+
+
+        &::after{
+            position: absolute;
+            left: 4px;
+            top: 8px;
+            clip-path: polygon(56% 0%, 100% 0, 100% 100%, 0 100%, 0 100%);
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: var(--colorPrimary);
+        }
+    }
+
+    #cover {
+        position: absolute;
+        width: 30%;
+        height: 30%;
+        top: 50%;
+        left: 56%;
+        transform: translate(-50%,-50%);
+    }
     
-    font-weight: 700;
-    text-align: center;
-}
-
-
-.next{
-    display: block;
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
+    #cover-logo-wrapper {
+        position: absolute;
+        z-index: 5;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 10%;
+        height: 0;
+        padding: 5% 0;
+        border: solid 1px rgba(255,255,255,0.2);
+    }
     
-    transform: translate(-50%,-50%);
-    margin: 0;
-    
-    background: linear-gradient(transparent,rgb(255, 208, 0),rgb(255, 217, 0));
-    background: transparent;
-    
-    color: rgb(253, 253, 253);
-    background-clip: text;
-    border: none;
-    font-size: 2.5rem;
-    font-weight: 500;
-    padding: 2rem 2rem;
-}
-.next-square{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border: 2px solid beige;
-    transform: rotateZ(45deg);
-}
-
-
-.section2{
-    box-sizing: border-box;
-    width: 100%;
-    height: 50vh;
-    padding: 5% 10%;
-    background-color: rgb(0, 2, 36);
-    overflow: hidden;
-    position: relative;
-    opacity: 1;
-
-    display: flex;
-    flex-wrap: wrap;
-
-
-}
-
-.section2 > div{
-    display: flex;
-    flex: 1 1 15rem;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-
-
-    
-    background-color: #01ff88;
-    color: rgb(14, 0, 48);
-    
-    font-size: 1.5rem;
-    overflow: hidden;
-    box-shadow: 0 0 5px 2px #01ff88;
+    #cover-logo {
+        position: absolute;
+        z-index: 5;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 100%;
+        height: 0;
+        padding: 50% 0;
+        text-align: center;
+        -ms-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
     
     
-}
-.section2 > div > *{
-    margin: 0;
-}
-.section2 > div > img{
-    max-width: 4vw;
-    max-height: 4vh;
-    margin-bottom: 1rem;
-    color: white;
-    filter: invert(0%);
-}
-
-.section2 > .button{
-
-}
-
-/*
-.section2 > div{
-    width: 90%;
-    height: 100%;
+    .cover-logo-boxes {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        border: 8px solid var(--colorSecondary);
+        background-color: var(--colorAccent);
+    }
     
-    box-sizing: border-box;
-    position: relative;
-    top: 0;
-
-
-}
-*/
-
-.bgImage{
-    z-index: 1;
-    background-color: black;
+    .cover-logo-boxes span {
+        display: block;
+        color: white;
+        font-size: 5rem;
+        text-shadow: var(--smooth-shadow-big);
+        transform: translate(-50% -50%);
+        -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+         -ms-transform: translate(-50%, -50%) rotate(-45deg);
+         -moz-transform: translate(-50%, -50%) rotate(-45deg);
+        top: 50%;
+        left: 50%;
+        position: absolute;
+    }
     
-    background: url('../../assets/images/fish/fish-underwater-1.jpg'), linear-gradient(black,transparent);
-    border-radius: 100% 50% 25% 40% ;
-    overflow: hidden;
-    filter: brightness(50%) grayscale(15%);
-    box-shadow: 0 0 7px 3px black inset;
-    transition: 0.1s;
-    opacity: 0;
-}
-
-.content{
-    z-index: 2;
-}
-
-
-
-/*
-.section3{
-    height: 100%;
-    width: 100%;
-    position: relative;
-    background-color: rgb(0, 2, 36);
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.section3 > div{
-
-}
-
-.reason{
-    flex: 6 1 80rem;
-    background-color: rgba(255, 255, 255, 0);
-}
-.reason-pic{
-    flex: 1 1 30rem;
-    background-color: yellowgreen;
-}
-*/
-
-.section3{
-    width: 100%;
-    height: 100%;
-    padding: 5%;
-    background: linear-gradient(-150deg,rgb(0, 2, 36),rgb(0, 2, 36),rgb(0, 0, 59));
-
+    #cover-logo-box-1 {
+        left: -0.5rem;
+        top: -0.5rem;
+    }
     
+    #cover-logo-box-2 {
+        right: -0.5rem;
+        top: -0.5rem;
+    }
+    
+    #cover-logo-box-3 {
+        left: -0.5rem;
+        bottom: -0.5rem;
+    }
+    
+    #cover-logo-box-4 {
+        right: -0.5rem;
+        bottom: -0.5rem;
+    }
 }
-
-.image{
-    background: url('../../assets/images/BGs/BG_aquarium_4.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    width: 60%;
-    height: 80%;
-    margin: 10%;
-
-    position: relative;
-    border-radius: 40% 40% 30% 60%;
-
-    box-shadow: 0 0 6px 3px black inset;
-}
-
-.image::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-}
-
-.image-text{
-    position: absolute;
-
-    width: 70%;
-    height: 130%;
-    background-color: rgb(46, 46, 46);
-
-    border-radius: 36% 44% 30% 40%;
-
-    top: -30%;
-    left: 70%;
-}
-

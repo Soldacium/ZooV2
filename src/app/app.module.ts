@@ -15,6 +15,9 @@ import { FishesComponent } from './fishes/fishes.component';
 import { FishGoldenComponent } from './fishes/fish-golden/fish-golden.component';
 import { ButtonFancyComponent } from './shared/components/button-fancy/button-fancy.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,9 @@ import { ButtonFancyComponent } from './shared/components/button-fancy/button-fa
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

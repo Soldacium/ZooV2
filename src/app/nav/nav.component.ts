@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  visible = false;
+  active = false;
+
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  change() {
+    this.visible = !this.visible;
+    this.active = !this.active;
   }
 
 }
