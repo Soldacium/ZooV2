@@ -1,0 +1,4 @@
+<button (click)="clickButton($event)">
+    <p *ngIf='text !== ""'>{{text}}</p>
+    <img *ngIf='img !== ""' [src]="img" alt="img">
+</button>

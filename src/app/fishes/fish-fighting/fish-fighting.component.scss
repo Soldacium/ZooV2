@@ -1,0 +1,166 @@
+
+.mainFish{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Ropa Sans', sans-serif;
+
+}
+.mainFish::before{
+    content: '';
+    background: url('../../assets/images/fish/fight-fish-1-noBG.png');
+    height: 350%;
+    width: 350%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(30%) blur(3px) contrast(100%);
+    position: absolute;
+    top: -125%;
+    left: -175%;
+}
+
+.fishImg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url('../../assets/images/fish/fight-fish-1-noBG.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.name{
+    position: relative;
+    top: 10%;
+    left: 15%;
+    width: 40%;
+    background: rgba(10, 10, 10, 0);   
+    animation: 2s ease-out 0s 1 NameSlide;
+    
+}
+
+.name > div{
+    letter-spacing: 17px;
+    font-weight: 900;
+    font-size: 8rem;
+    background: linear-gradient(90deg, rgba(70,70,70,1) 0%, rgba(140,140,140,1) 43%, rgba(172,172,172,1) 64%, rgba(232,232,232,0.7679446778711485) 100%);
+    background-clip: text;
+    color: transparent;  
+}
+
+.name > div:nth-child(1){ 
+    font-size: 40px;
+    background: linear-gradient(90deg, rgba(246,104,104,1) 0%, rgba(239,44,73,1) 22%, rgba(236,20,61,1) 38%, rgba(94,0,0,1) 69%);
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+.name > div:nth-child(2){
+    text-align: left;  
+}
+.name > div:nth-child(3){  
+    text-align: right;   
+}
+
+@keyframes NameSlide {
+    0% {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  .getMore{
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      transition: 0.5s;
+      border: none;
+      border-radius: 10px;
+      color: rgb(240, 240, 240);
+      font-size: 1.4rem;
+      background-color: rgba(255, 255, 255, 0);
+      padding: 0.7rem 2rem;
+  }
+
+  .getMore:hover{
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      box-shadow: 0 0 6px 2px white;
+  }
+
+  .getMore.active{
+      opacity: 1;
+  }
+  .getMore.naah{
+      opacity: 0;
+  }
+
+
+
+
+
+
+  /* more */
+
+  .more{
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      background-color: rgba(0, 0, 0,0.8);
+      transition: 1s ease-in-out;
+      
+      
+  }
+  .more.active{
+      right: 0;
+  }
+  .more.naah{
+      right: -60%;
+  }
+  .wave{
+      position: absolute;
+      width: 143px;
+      height: 100%;
+      top: 0;
+      left: -143px;
+      background-image: url('../../assets/images/BGs/wave.png');
+      background-position: center;
+      background-size: cover;
+      filter: brightness(00%) opacity(0.8);
+      animation: waveAnimation 10s infinite linear;
+      
+  }
+  .wave::before{
+    position: absolute;
+    content: '';
+    width: 143px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/images/BGs/wave.png');
+    background-position: center;
+    background-size: cover;
+    filter: brightness(00%) opacity(0.6);
+    animation: waveAnimation 20s infinite linear reverse;
+  }
+
+  @keyframes waveAnimation{
+      0%{
+        background-position-y: 0;
+      }
+      100%{
+          background-position-y: 1360px;
+      }
+  }

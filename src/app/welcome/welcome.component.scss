@@ -1,0 +1,235 @@
+
+main{
+    width: 100%;
+    height: 100%;
+}
+.section1{
+
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/images/BGs/BG_aquarium_3.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    position: relative;
+    font-family: 'Ropa Sans', sans-serif;
+    
+    
+}
+
+.textOne{
+    
+    background: linear-gradient(rgb(0, 79, 85),rgba(53, 242, 248, 0)) ;
+    
+    width: 11vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    animation: textOneAnim 0.5s;
+    transition: 0.2s all;
+    color: white;
+    
+}
+
+@keyframes textOneAnim{
+    from{
+        left: -20vw;
+    }to{
+        left: 0;
+    }
+}
+.textOne p{
+    transform: rotate(90deg) translateX(50%);
+    font-size: 5rem;
+    line-height: 4rem;
+    margin: 0;
+    
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.next{
+    display: block;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    
+    transform: translate(-50%,-50%);
+    margin: 0;
+    
+    background: linear-gradient(transparent,rgb(255, 208, 0),rgb(255, 217, 0));
+    background: transparent;
+    
+    color: rgb(253, 253, 253);
+    background-clip: text;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding: 2rem 2rem;
+}
+.next-square{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 2px solid beige;
+    transform: rotateZ(45deg);
+}
+
+
+.section2{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50vh;
+    padding: 5% 10%;
+    background-color: rgb(0, 2, 36);
+    overflow: hidden;
+    position: relative;
+    opacity: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.section2 > div{
+    display: flex;
+    flex: 1 1 15rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+
+    
+    background-color: #01ff88;
+    color: rgb(14, 0, 48);
+    
+    font-size: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 5px 2px #01ff88;
+    
+    
+}
+.section2 > div > *{
+    margin: 0;
+}
+.section2 > div > img{
+    max-width: 4vw;
+    max-height: 4vh;
+    margin-bottom: 1rem;
+    color: white;
+    filter: invert(0%);
+}
+
+.section2 > .button{
+
+}
+
+/*
+.section2 > div{
+    width: 90%;
+    height: 100%;
+    
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+
+
+}
+*/
+
+.bgImage{
+    z-index: 1;
+    background-color: black;
+    
+    background: url('../../assets/images/fish/fish-underwater-1.jpg'), linear-gradient(black,transparent);
+    border-radius: 100% 50% 25% 40% ;
+    overflow: hidden;
+    filter: brightness(50%) grayscale(15%);
+    box-shadow: 0 0 7px 3px black inset;
+    transition: 0.1s;
+    opacity: 0;
+}
+
+.content{
+    z-index: 2;
+}
+
+
+
+/*
+.section3{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: rgb(0, 2, 36);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section3 > div{
+
+}
+
+.reason{
+    flex: 6 1 80rem;
+    background-color: rgba(255, 255, 255, 0);
+}
+.reason-pic{
+    flex: 1 1 30rem;
+    background-color: yellowgreen;
+}
+*/
+
+.section3{
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    background: linear-gradient(-150deg,rgb(0, 2, 36),rgb(0, 2, 36),rgb(0, 0, 59));
+
+    
+}
+
+.image{
+    background: url('../../assets/images/BGs/BG_aquarium_4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 60%;
+    height: 80%;
+    margin: 10%;
+
+    position: relative;
+    border-radius: 40% 40% 30% 60%;
+
+    box-shadow: 0 0 6px 3px black inset;
+}
+
+.image::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+.image-text{
+    position: absolute;
+
+    width: 70%;
+    height: 130%;
+    background-color: rgb(46, 46, 46);
+
+    border-radius: 36% 44% 30% 40%;
+
+    top: -30%;
+    left: 70%;
+}
+
