@@ -5,8 +5,10 @@
     height: 100%;
     overflow: hidden;
     font-family: 'Ropa Sans', sans-serif;
+    background-color: var(--colorPrimary);
 
 }
+/*
 .mainFish::before{
     content: '';
     background: url('../../../assets/images/fish/fight-fish-1-noBG.png');
@@ -19,6 +21,7 @@
     top: -125%;
     left: -175%;
 }
+*/
 
 .fishImg{
     position: absolute;
@@ -118,7 +121,7 @@
       width: 50%;
       height: 100%;
       top: 0;
-      background-color: rgba(0, 0, 0,0.8);
+      background-color: var(--colorSecondary);
       transition: 1s ease-in-out;
       
       

@@ -1,14 +1,28 @@
 <div class="menuFish">
-    <p>TROPIC</p>
-    <p>FISH</p>
-    <a [routerLink]='["fish/fight-fish"]'><div class="dot" routerLinkActive="active"></div></a>
-    <a [routerLink]='["fish/gold-fish"]'><div class="dot" routerLinkActive="active"></div></a>
+    <!--
+    <a [routerLink]='["/fishes/fighting"]'><div class="dot" routerLinkActive="active"></div></a>
+    <a [routerLink]='["/fishes/golden"]'><div class="dot" routerLinkActive="active"></div></a>
     <a href=""><div class="dot"></div></a>
-    <a href=""><div class="dot"></div></a>
+    <a href=""><div class="dot"></div></a>        
+    -->
+
+    <div class="next">
+        <a class="next-square" [routerLink]='["/fishes/fighting"]' routerLinkActive="active"></a>
+    </div>
+    <div class="next">
+        <a class="next-square" [routerLink]='["/fishes/golden"]' routerLinkActive="active"></a>
+    </div>
+    <div class="next">
+        <a class="next-square" [routerLink]='["/fishes/a"]' routerLinkActive="active"></a>
+    </div>
+    <div class="next">
+        <a class="next-square" [routerLink]='["/fishes/a"]' routerLinkActive="active"></a>
+    </div>
+
+    <!--
     <div class="scroll">
         <div class="mouse">
             <svg width="30px" height="50px" viewBox="0 0 40 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="mouse-icon">
-                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
                 <desc>Created with Sketch.</desc>
                 <defs></defs>
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -21,5 +35,7 @@
                 </g>
             </svg>
         </div>
-    </div>
+    </div>        
+    -->
+
 </div>

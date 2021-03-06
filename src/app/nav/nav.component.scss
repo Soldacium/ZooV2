@@ -73,27 +73,18 @@
   /********************* style overlay ***********************/
   .overlay {
     position: fixed;
-    background: rgba(8, 8, 8, 0.911);
+    background: var(--colorSecondary);
     top: 0;
     right: 0;
     width: 0%;
     height: 100%;
     z-index: 250;
-
     opacity: 0;
     visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    /*
-    font-family: 'AbeeZee',sans-serif;
-    */
-    font-family: 'Ropa Sans', sans-serif;
-
     transition: .4s;
-    
-
-    
 }
 
 nav {
@@ -145,24 +136,24 @@ nav ul li a:hover{
 .overlay.visible{
    opacity: 1;
    visibility: visible;
-   width: 30%;
+   width: 100%;
 }
 
-   .overlay.visible li{
-       animation: fadeInLeft .3s ease-in-out forwards;
-   }
-       .overlay.visible li:nth-of-type(1){
-           animation-delay:  .24s;
-       }
-       .overlay.visible li:nth-of-type(2){
-           animation-delay:  .28s;
-       }
-       .overlay.visible li:nth-of-type(3){
-           animation-delay:  .32s;
-       }
-       .overlay.visible li:nth-of-type(4){
-           animation-delay:  .36s;
-       }
-       .overlay.visible li:nth-of-type(5){
-           animation-delay:  .40s;
-       }
+.overlay.visible li{
+    animation: fadeInLeft .3s ease-in-out forwards;
+}
+    .overlay.visible li:nth-of-type(1){
+        animation-delay:  .24s;
+    }
+    .overlay.visible li:nth-of-type(2){
+        animation-delay:  .28s;
+    }
+    .overlay.visible li:nth-of-type(3){
+        animation-delay:  .32s;
+    }
+    .overlay.visible li:nth-of-type(4){
+        animation-delay:  .36s;
+    }
+    .overlay.visible li:nth-of-type(5){
+        animation-delay:  .40s;
+    }

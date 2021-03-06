@@ -31,12 +31,6 @@ section {
     .next{
         display: block;
         position: relative;
-        
-        background: linear-gradient(transparent,rgb(255, 208, 0),rgb(255, 217, 0));
-        background: transparent;
-        
-        color: rgb(253, 253, 253);
-        background-clip: text;
         border: none;
         font-size: 2.5rem;
         font-weight: 500;
@@ -127,10 +121,6 @@ section {
         0 8px 12px rgba(0,0,0,0.16),
         0 16px 24px rgba(0,0,0,0.16);
     }
-}
-
-.about{
-
 }
 
 .attractions{
@@ -251,5 +241,40 @@ section {
     #cover-logo-box-4 {
         right: -0.5rem;
         bottom: -0.5rem;
+    }
+}
+
+.about{
+    .shape {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--colorSecondary);
+        clip-path: polygon(0 0, 21% 0, 45% 20%, 45% 59%, 100% 100%, 0 100%);
+
+
+        &::after{
+            position: absolute;
+            right: 4px;
+            top: 8px;
+            clip-path: polygon(0 0, 21% 0, 45% 20%, 45% 59%, 100% 100%, 0 100%);
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: var(--colorPrimary);
+        }
+    }
+
+    .content{
+        position: absolute;
+        left: 74.6%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 60%;
+        height: 60%;
+        border: 6px solid var(--colorSecondary);
+        background-color: var(--colorPrimary);
     }
 }
