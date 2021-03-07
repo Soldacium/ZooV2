@@ -7,6 +7,7 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { FishFightingComponent } from './fishes/fish-fighting/fish-fighting.component';
 import { FishesComponent } from './fishes/fishes.component';
 import { FishGoldenComponent } from './fishes/fish-golden/fish-golden.component';
+import { FishJellyComponent } from './fishes/fish-jelly/fish-jelly.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
     children: [
       { path: 'fighting', component: FishFightingComponent, data: {animation: 'WelcomePage'} },
       { path: 'golden', component: FishGoldenComponent, data: {animation: 'PostsListPage'}},
+      { path: 'jelly', component: FishJellyComponent, data: {animation: 'PostsListPage'}},
     ]
   },
   {

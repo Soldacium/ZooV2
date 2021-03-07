@@ -1,6 +1,16 @@
 <main>
     <section class="tickets-buy">
-        
+        <span class="coral left"></span>
+        <span class="coral right"></span>
+        <div class="tickets-phase">
+            <div class="phase done">1</div>
+            <div class="line"></div>
+            <div class="phase current">2</div>
+            <div class="line"></div>
+            <div class="phase">
+                <span></span>
+                3</div>
+        </div>
         <div class="ticket" *ngFor='let ticket of ticketOptions; index as i' (click)='chooseOption(i)' [ngClass]="currentOption === i?'active':'naah'">
             <div class="ticket-bg"></div>
             <div class="name ">{{ticket.name}}</div>
@@ -10,11 +20,21 @@
             <div class="price">{{ticket.currency}}{{ticket.price}}</div>
             <img [src]='ticket.image' alt="">
         </div>
+        <div class="tickets-arrows">
+            <div class="arrow">
+                <img src="assets/icons/arrow-left.svg" alt="">
+            </div>
+            <div class="arrow">
+                <img src="assets/icons/arrow-right.svg" alt="">
+            </div>
+        </div>
     </section>
-    <div class="tickets-about">
+    <section class="tickets-about">
+        <div class="shape">
 
-    </div>
-    <div class="map">
+        </div>
+    </section>
+    <section class="map">
 
-    </div>
+    </section>
 </main>

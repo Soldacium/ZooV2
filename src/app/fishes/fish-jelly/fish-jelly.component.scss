@@ -1,0 +1,177 @@
+
+main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--colorPrimary);
+}
+
+button{
+    display: flex;
+    img{
+        position: relative;
+        margin: 0 0.5rem;
+        height: 1.4rem;
+        width: 1.4rem;
+
+        filter: invert(100%);
+    }
+}
+
+.fish-display{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 1s ease;
+    left: 0;
+    
+    &.active{
+        left: -20%;
+    }
+
+    .fishImg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url('../../../assets/images/fish/jelly-fish.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    
+        &.shadow{
+            background: url('../../../assets/images/fish/jelly-fish-blue.png');
+            position: absolute;
+            top: -2%;
+            left: 2%;
+            opacity: 0;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .water{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10rem;
+        height: 100%;
+        background-image: url('../../../assets/images/BGs/wave2.png');
+    }
+
+    .name{
+        position: relative;
+        top: 10%;
+        left: 15%;
+        width: 40%;
+        background: rgba(10, 10, 10, 0);   
+        animation: 2s ease-out 0s 1 NameSlide;
+        z-index: 20;
+    
+        div{
+            letter-spacing: 17px;
+            font-weight: 900;
+            font-size: 8rem;
+            color: white;
+            text-shadow: var(--smooth-shadow-big);
+    
+            &:nth-child(1){ 
+                font-size: 40px;
+                background: linear-gradient(90deg, rgb(28, 107, 255) 0%, rgb(0, 82, 189) 22%, rgb(0, 23, 126) 38%, rgb(0, 72, 94) 69%);
+                background-clip: text;
+                color: transparent;
+                text-align: center;
+            }
+            &:nth-child(2){
+                text-align: left;  
+            }
+            &:nth-child(3){  
+                text-align: right;   
+            }
+        }
+        
+    }
+
+}
+
+
+@keyframes NameSlide {
+    0% {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+.getMore{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    transition: 0.5s;
+    border: none;
+    border-radius: 10px;
+    color: rgb(240, 240, 240);
+    font-size: 1.4rem;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0.7rem 2rem;
+
+    &:hover{
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        box-shadow: 0 0 6px 2px white;
+    }
+    &.active{
+        opacity: 1;
+    }
+    &.naah{
+        opacity: 0;
+    }  
+  }
+/* more */
+
+.fish-info{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    background-color: var(--colorSecondary);
+    transition: 1s ease-in-out;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+
+    &.active{
+        right: 0;
+    }
+    &.naah{
+        right: -60%;
+    }
+
+    &::after{
+        position: absolute;
+        left: 8px;
+        top: 0;
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: var(--colorAccent);
+    } 
+
+    .content{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 10;
+    }
+    
+}
