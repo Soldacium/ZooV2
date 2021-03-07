@@ -1,71 +1,101 @@
 
-.mainFish{
+main{
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: 'Ropa Sans', sans-serif;
     background-color: var(--colorPrimary);
-
 }
-/*
-.mainFish::before{
-    content: '';
-    background: url('../../../assets/images/fish/fight-fish-1-noBG.png');
-    height: 350%;
-    width: 350%;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(30%) blur(3px) contrast(100%);
-    position: absolute;
-    top: -125%;
-    left: -175%;
-}
-*/
 
-.fishImg{
-    position: absolute;
+button{
+    display: flex;
+    img{
+        position: relative;
+        margin: 0 0.5rem;
+        height: 1.4rem;
+        width: 1.4rem;
+
+        filter: invert(100%);
+    }
+}
+
+.fish-display{
+    position: relative;
     width: 100%;
     height: 100%;
-    top: 0;
+    transition: 1s ease;
     left: 0;
-    background: url('../../../assets/images/fish/fight-fish-blue.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.name{
-    position: relative;
-    top: 10%;
-    left: 15%;
-    width: 40%;
-    background: rgba(10, 10, 10, 0);   
-    animation: 2s ease-out 0s 1 NameSlide;
     
+    &.active{
+        left: -20%;
+    }
+
+    .fishImg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url('../../../assets/images/fish/fight-fish-blue.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    
+        &.shadow{
+            background: url('../../../assets/images/fish/fight-fish-blue-shadow.png');
+            position: absolute;
+            top: 5%;
+            left: -5%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .water{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10rem;
+        height: 100%;
+        background-image: url('../../../assets/images/BGs/wave2.png');
+    }
+
+    .name{
+        position: relative;
+        top: 10%;
+        left: 15%;
+        width: 40%;
+        background: rgba(10, 10, 10, 0);   
+        animation: 2s ease-out 0s 1 NameSlide;
+        z-index: 20;
+    
+        div{
+            letter-spacing: 17px;
+            font-weight: 900;
+            font-size: 8rem;
+            color: white;
+            text-shadow: var(--smooth-shadow-big);
+    
+            &:nth-child(1){ 
+                font-size: 40px;
+                background: linear-gradient(90deg, rgb(28, 107, 255) 0%, rgb(0, 82, 189) 22%, rgb(0, 23, 126) 38%, rgb(0, 72, 94) 69%);
+                background-clip: text;
+                color: transparent;
+                text-align: center;
+            }
+            &:nth-child(2){
+                text-align: left;  
+            }
+            &:nth-child(3){  
+                text-align: right;   
+            }
+        }
+        
+    }
+
 }
 
-.name > div{
-    letter-spacing: 17px;
-    font-weight: 900;
-    font-size: 8rem;
-    color: white;
-    text-shadow: var(--smooth-shadow-big);
-}
-
-.name > div:nth-child(1){ 
-    font-size: 40px;
-    background: linear-gradient(90deg, rgb(28, 107, 255) 0%, rgb(0, 82, 189) 22%, rgb(0, 23, 126) 38%, rgb(0, 72, 94) 69%);
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-}
-.name > div:nth-child(2){
-    text-align: left;  
-}
-.name > div:nth-child(3){  
-    text-align: right;   
-}
 
 @keyframes NameSlide {
     0% {
@@ -82,70 +112,85 @@
   }
 
 
-  .getMore{
-      position: absolute;
-      bottom: 10%;
-      right: 10%;
-      transition: 0.5s;
-      border: none;
-      border-radius: 10px;
-      color: rgb(240, 240, 240);
-      font-size: 1.4rem;
-      background-color: rgba(255, 255, 255, 0);
-      padding: 0.7rem 2rem;
+.getMore{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    transition: 0.5s;
+    border: none;
+    border-radius: 10px;
+    color: rgb(240, 240, 240);
+    font-size: 1.4rem;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0.7rem 2rem;
+
+    &:hover{
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        box-shadow: 0 0 6px 2px white;
+    }
+    &.active{
+        opacity: 1;
+    }
+    &.naah{
+        opacity: 0;
+    }  
   }
+/* more */
 
-  .getMore:hover{
-      background-color: white;
-      color: black;
-      cursor: pointer;
-      box-shadow: 0 0 6px 2px white;
-  }
+.fish-info{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    background-color: var(--colorSecondary);
+    transition: 1s ease-in-out;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
 
-  .getMore.active{
-      opacity: 1;
-  }
-  .getMore.naah{
-      opacity: 0;
-  }
+    &.active{
+        right: 0;
+    }
+    &.naah{
+        right: -60%;
+    }
+
+    &::after{
+        position: absolute;
+        left: 8px;
+        top: 0;
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: var(--colorAccent);
+    } 
+
+    .content{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 10;
+    }
+    
+}
 
 
-
-
-
-
-  /* more */
-
-  .more{
-      position: absolute;
-      width: 50%;
-      height: 100%;
-      top: 0;
-      background-color: var(--colorSecondary);
-      transition: 1s ease-in-out;
-      
-      
-  }
-  .more.active{
-      right: 0;
-  }
-  .more.naah{
-      right: -60%;
-  }
-  .wave{
-      position: absolute;
-      width: 143px;
-      height: 100%;
-      top: 0;
-      left: -143px;
-      background-image: url('../../../assets/images/BGs/wave.png');
-      background-position: center;
-      background-size: cover;
-      filter: brightness(00%) opacity(0.8);
-      animation: waveAnimation 10s infinite linear;
-      
-  }
-  .wave::before{
+/*
+.wave{
+    position: absolute;
+    width: 143px;
+    height: 100%;
+    top: 0;
+    left: -143px;
+    background-image: url('../../../assets/images/BGs/wave.png');
+    background-position: center;
+    background-size: cover;
+    filter: brightness(00%) opacity(0.8);
+    animation: waveAnimation 10s infinite linear;
+    
+}
+.wave::before{
     position: absolute;
     content: '';
     width: 143px;
@@ -157,13 +202,14 @@
     background-size: cover;
     filter: brightness(00%) opacity(0.6);
     animation: waveAnimation 20s infinite linear reverse;
-  }
+}
 
-  @keyframes waveAnimation{
-      0%{
-        background-position-y: 0;
-      }
-      100%{
-          background-position-y: 1360px;
-      }
-  }
+@keyframes waveAnimation{
+    0%{
+    background-position-y: 0;
+    }
+    100%{
+        background-position-y: 1360px;
+    }
+}
+*/

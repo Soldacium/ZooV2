@@ -1,1 +1,20 @@
-<p>tickets works!</p>
+<main>
+    <section class="tickets-buy">
+        
+        <div class="ticket" *ngFor='let ticket of ticketOptions; index as i' (click)='chooseOption(i)' [ngClass]="currentOption === i?'active':'naah'">
+            <div class="ticket-bg"></div>
+            <div class="name ">{{ticket.name}}</div>
+            <ul class="features" *ngFor='let feature of ticket.features'>
+                <li>{{feature}}</li>
+            </ul>
+            <div class="price">{{ticket.currency}}{{ticket.price}}</div>
+            <img [src]='ticket.image' alt="">
+        </div>
+    </section>
+    <div class="tickets-about">
+
+    </div>
+    <div class="map">
+
+    </div>
+</main>

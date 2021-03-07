@@ -101,30 +101,42 @@
 
   
 -->
-<div class="mainFish">
-    <div class="fishImg">
-
+<main>
+    <div class="fish-display" [ngClass]="(more == false)?'naah':'active'">
+        <div class="fishImg shadow"></div>
+        <div class="fishImg"></div>
+    
+        <div class="water"></div>
+    
+    
+        <div class="name">
+            <div>
+                SIAMESE
+            </div>
+            <div>FIGHTING</div>
+            <div>FISH</div>
+        </div>  
+    
+        <button class="getMore" [ngClass]="(more==true)?'naah':'active'" (click)='changeMore()'>
+            Learn more <img src="assets/icons/arrow-right.svg" alt="">
+        </button>
     </div>
+    
+    <section class='fish-info' [ngClass]="(more == false)?'naah':'active'" >
+        <!--
 
-    <div class="name">
-        <div>
-            SIAMESE
+            <div class="wave"></div>
+        -->
+        <div class="content">
+            <button class="getMore"  (click)='changeMore()'>
+                <img src="assets/icons/arrow-left.svg" alt=""> AAAAAAA
+            </button>
         </div>
-        <div>FIGHTING</div>
-        <div>FISH</div>
-    </div>  
+        
 
-    <button class="getMore" [ngClass]="(more==true)?'naah':'active'" (click)='changeMore()'>
-        Learn more &nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i>
-    </button>
-</div>
+    </section>  
+</main>
 
-<section class='more' [ngClass]="(more==true)?'active':'naah'" >
-    <div class="wave"></div>
-    <button class="getMore"  (click)='changeMore()'>
-         <i class="fa fa-arrow-left" aria-hidden="true"></i>
-    </button>
-</section>  
 
 
 

@@ -12,14 +12,21 @@
 </div>
 
 <div class="overlay" [ngClass]="visible ? 'visible' : 'naah'">
-<nav class="menu">
-    <ul>
-        <li><a [routerLink]='["welcome"]' (click)='change()'>Home</a></li>
-        <li><a [routerLink]='["fishes/fighting"]' (click)='change()'>Fishes</a></li>
-        <li><a [routerLink]='["fishes/golden"]' (click)='change()'>Map</a></li>
-        <li><a [routerLink]='["about"]' (click)='change()'>About</a></li>
-        <li><a [routerLink]='["tickets"]' (click)='change()'>Tickets</a></li>
-    </ul>
-</nav>
+    <div class="fill"></div>
+    <div class="fill2"></div>
+    <nav class="menu">
+        <!--
+        <canvas id='canvas'></canvas> 
+        -->
+        
+        
+        <ul>
+            <li><a [routerLink]='["welcome"]' (click)='change()'>Home</a></li>
+            <li><a [routerLink]='["fishes/fighting"]' (click)='change()'>Fishes</a></li>
+            <li><a [routerLink]='["fishes/golden"]' (click)='change()'>Map</a></li>
+            <li><a [routerLink]='["about"]' (click)='change()'>About</a></li>
+            <li><a [routerLink]='["tickets"]' (click)='change()'>Tickets</a></li>
+        </ul>
+    </nav>
 </div>
 
