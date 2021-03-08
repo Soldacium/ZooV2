@@ -265,9 +265,18 @@ section {
             height: 100%;
             background-color: var(--colorPrimary);
         }
+
+        .content-events{
+            z-index: 10;
+            position: relative;
+            top: 10%;
+            left: 10%;
+            max-width: 50%;
+            height: 60vh;
+        }
     }
 
-    .content{
+    .content-openings{
         position: absolute;
         left: 74.6%;
         top: 50%;
@@ -275,6 +284,8 @@ section {
         width: 60%;
         height: 60%;
         border: 6px solid var(--colorSecondary);
-        background-color: var(--colorPrimary);
+        background-color: var(--colorSecondary);
+        color: white;
+        padding: 10%;
     }
 }

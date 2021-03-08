@@ -2,36 +2,58 @@
     <section class="tickets-buy">
         <span class="coral left"></span>
         <span class="coral right"></span>
-        <div class="tickets-phase">
-            <div class="phase done">1</div>
+        <div class="current-phase">
+            <div class="phase-number" [ngClass]='currentPhase == 0 ? "current":"done"'>1</div>
             <div class="line"></div>
-            <div class="phase current">2</div>
+            <div class="phase-number" [ngClass]='{"current": currentPhase == 1, "done": currentPhase > 1}'>2</div>
             <div class="line"></div>
-            <div class="phase">
-                <span></span>
-                3</div>
+            <div class="phase-number" [ngClass]='{"current": currentPhase == 2, "done": currentPhase > 2}'>3</div>
         </div>
-        <div class="ticket" *ngFor='let ticket of ticketOptions; index as i' (click)='chooseOption(i)' [ngClass]="currentOption === i?'active':'naah'">
-            <div class="ticket-bg"></div>
-            <div class="name ">{{ticket.name}}</div>
-            <ul class="features" *ngFor='let feature of ticket.features'>
-                <li>{{feature}}</li>
-            </ul>
-            <div class="price">{{ticket.currency}}{{ticket.price}}</div>
-            <img [src]='ticket.image' alt="">
+        <div class="phase" [style.right]='currentPhase * 100  + "%"' >
+            <div class="ticket" *ngFor='let ticket of ticketOptions; index as i' (click)='chooseOption(i)' [ngClass]="currentOption === i?'active':'naah'">
+                <div class="ticket-bg"></div>
+                <div class="name ">{{ticket.name}}</div>
+                <ul class="features" *ngFor='let feature of ticket.features'>
+                    <li>{{feature}}</li>
+                </ul>
+                <div class="price">{{ticket.currency}}{{ticket.price}}</div>
+                <img [src]='ticket.image' alt="">
+            </div>
         </div>
+        <div class="phase" [style.tight]='(currentPhase-1) * 100  + "%"' >
+            <div class="payment-info">
+
+            </div>
+        </div>
+
         <div class="tickets-arrows">
-            <div class="arrow">
+            <button class="arrow" (click)='prevPhase()' [disabled]='currentPhase == 0'>
                 <img src="assets/icons/arrow-left.svg" alt="">
-            </div>
-            <div class="arrow">
+            </button>
+            <button class="arrow" (click)='nextPhase()' [disabled]='currentPhase == 2'>
                 <img src="assets/icons/arrow-right.svg" alt="">
-            </div>
+            </button>
         </div>
     </section>
     <section class="tickets-about">
         <div class="shape">
-
+            <div class="content">
+                <h1>About</h1>
+                <div class="line"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+                    elit. Iure odio explicabo nesciunt incidunt velit 
+                    nobis eveniet animi. In, praesentium perferendis! 
+                    Accusamus alias aperiam ab, minus tenetur odio 
+                    provident, magni, itaque aut iusto dignissimos 
+                    dolores blanditiis veritatis animi. Corrupti, 
+                    rerum! Dignissimos, odit. Optio nisi adipisci 
+                    cum reprehenderit voluptatum eius earum vel, 
+                    facere fugit nemo dignissimos porro voluptates 
+                    numquam illo repudiandae deserunt?</p>
+            </div>
+            <span class="background">
+                
+            </span>
         </div>
     </section>
     <section class="map">

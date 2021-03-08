@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { FishJellyComponent } from './fishes/fish-jelly/fish-jelly.component';
 import { AboutComponent } from './about/about.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AboutComponent } from './about/about.component';
     FishGoldenComponent,
     ButtonFancyComponent,
     FishJellyComponent,
-    AboutComponent
+    AboutComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

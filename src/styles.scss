@@ -69,3 +69,9 @@ button{
       0 8px 8px rgba(0,0,0,0.08),
       0 16px 16px rgba(0,0,0,0.08);
   }
+
+  button{
+      &:focus{
+          outline: none;
+      }
+  }
