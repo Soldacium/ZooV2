@@ -101,10 +101,10 @@ section{
     }
 
     .phase{
-        position: relative;
-        width: 100%;
+        position: absolute;
+        top: 20vh;
+        width: 100vw;
         height: 70vh;
-        top: 0;
         padding: 0 10vw;
         display: flex;
         flex-wrap: wrap;
@@ -117,11 +117,33 @@ section{
         background-color: var(--colorSecondary);
         margin: 2rem;
         position: relative;
-        padding: 1rem;
         color: white;
         cursor: pointer;
+        transition: 0.5s ease;
+        z-index: 3;
 
+        &.faded{
 
+            .ticket-bg{
+                background-color: var(--colorPrimary);
+                border: 3px solid var(--colorSecondary);
+
+                img{
+                    opacity: 0;
+                }
+            }
+        }
+        h1{
+            font-size: 3rem;
+            text-shadow: var(--smooth-shadow-big);
+        }
+        ul{
+            list-style: "\2AF8";
+            li{
+                padding-left: 1rem;
+                font-size: 1.2rem;
+            }
+        }
         &:hover{
             img{
                 right: -30%;
@@ -133,9 +155,11 @@ section{
             z-index: -1;
             width: 100%;
             height: 100%;
+            padding: 1rem;
             transition: 0.5s ease;
             top: 0;
             left: 0;
+            border: 3px solid transparent;
             background-color: var(--colorAccent);
         }
         &.active {
@@ -163,6 +187,51 @@ section{
         }
 
 
+    }
+
+    .payment-info{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+
+        *{
+            position: relative;
+        }
+        .type{
+            height: 20vh;
+            width: 30vw;
+            margin: 1rem;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            font-size: 3rem;
+            text-shadow: var(--smooth-shadow-big);
+            color: var(--colorSecondary);
+            cursor: pointer;
+            transition: 0.3s;
+
+            .background{
+                position: absolute;
+                right: -1rem;
+                top: -1rem;
+                width: 5rem;
+                height: 5rem;
+                
+                
+            }
+
+            &.active{
+                z-index: 100;
+                transform: scale(1.1);
+            }
+        }
+
+        .write{
+            width: 60vw;
+        }
     }
 
     .tickets-arrows{

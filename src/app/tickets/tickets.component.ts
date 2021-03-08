@@ -8,8 +8,10 @@ import { Ticket } from '@shared/models/ticket.model';
 })
 export class TicketsComponent implements OnInit {
 
-  currentOption = 0;
-  currentPhase = 0;
+  currentOption = -1;
+  currentPhase = 1;
+  ticketType = -1;
+
   constructor() { }
 
   ticketOptions: Ticket[] = [
@@ -84,6 +86,14 @@ export class TicketsComponent implements OnInit {
       this.currentOption = -1;
     } else {
       this.currentOption = number;
+    }
+  }
+
+  chooseTicketType(number: number){
+    if(this.ticketType == number){
+      this.ticketType = -1;
+    } else {
+      this.ticketType = number;
     }
   }
 
