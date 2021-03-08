@@ -76,6 +76,23 @@ section {
         font-size: 2.5rem;
         font-weight: 500;
         padding: 2rem 2rem;
+        cursor: pointer;
+
+        &:hover{
+            .arrow{
+                top: 60%;
+            }
+        }
+
+        .arrow{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 2rem;
+            filter: invert(100%);
+            transition: 0.3s ease;
+        }
 
         .next-square{
             top: 0;
@@ -362,8 +379,8 @@ section {
         .content-events{
             z-index: 10;
             position: relative;
-            top: 2rem;
-            left: 2rem;
+            top: 4rem;
+            left: 4rem;
             max-width: 35%;
             height: 60vh;
             color: white;
@@ -371,6 +388,10 @@ section {
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
+            
+
+
+
 
             h1{
                 text-shadow: var(--smooth-shadow-big);
@@ -387,15 +408,40 @@ section {
                 left: 4rem;
                 font-size: 1.5rem;
             }
-
+            // make into component
             button{
                 position: relative;
-                padding: 0.6rem 1rem;
-                border: 4px solid var(--colorSecondary);
-                background-color: var(--colorAccent);
+                width: 16rem;
+                height: 4rem;
+                border: 3px solid var(--colorSecondary);
+                background-color: var(--colorSecondary);
                 color: white;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 margin: 1rem;
+                cursor: pointer;
+
+                .background{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: 0.3s ease;
+                    background-color: var(--colorPrimary);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                }
+
+                &:hover{
+                    border-color: transparent;
+                    .background{
+                        left: 0.5rem;
+                        top: 0.5rem;
+                        background-color: var(--colorAccent);
+                    }
+                }
             }
         }
     }
@@ -411,6 +457,49 @@ section {
         background-color: var(--colorSecondary);
         color: white;
         padding: 10%;
+
+        // make into compoenent
+        .choose{
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: -6.4rem;
+            top: 50%;
+            transform: rotate(90deg);
+            .next{
+                display: block;
+                position: relative;
+                border: none;
+                font-size: 2.5rem;
+                font-weight: 500;
+                padding: 1.5rem 1.5rem;
+                z-index: 100;
+            
+                .next-square{
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    border: 4px solid;
+                    border-color: white;
+                    transform: rotateZ(45deg);
+                    transition: 0.5s;
+        
+                    &.active{
+                        background-color: white;
+        
+                        &:hover{
+                            background-color: white;
+                        }
+                    }
+        
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 0.301);
+                    }
+                }
+            }
+        }
     }
 }
 
