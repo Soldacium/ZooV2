@@ -12,6 +12,12 @@ export class TicketsComponent implements OnInit {
   currentPhase = 1;
   ticketType = -1;
 
+  options = {
+    name: '',
+    email: '',
+    phone: ''
+  }
+
   constructor() { }
 
   ticketOptions: Ticket[] = [

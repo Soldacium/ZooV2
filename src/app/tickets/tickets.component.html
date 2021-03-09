@@ -32,7 +32,26 @@
                     Reserve seat for event
                     <img src="assets/icons/calendar.svg" alt="" class="background">
                 </div>
-                <div class="write"></div>
+                <div class="write">
+                    <app-input 
+                    [label]="'Name'" 
+                    [placeholder]="'Name'" 
+                    [(inputModel)]="options.name" 
+                    [type]="'text'"
+                    [darkMode]='false'></app-input>
+                    <app-input 
+                    [label]="'Email'" 
+                    [placeholder]="'Email'" 
+                    [(inputModel)]="options.email" 
+                    [type]="'text'"
+                    [darkMode]='false'></app-input>
+                    <app-input 
+                    [label]="'Phone'" 
+                    [placeholder]="'Phone'" 
+                    [(inputModel)]="options.phone" 
+                    [type]="'text'"
+                    [darkMode]='false'></app-input>
+                </div>
             </div>
         </div>
 
@@ -43,8 +62,11 @@
                 </div>
                 <div class="type">Reserve seat for event
                     <img src="assets/icons/calendar.svg" alt="" class="background">
+                    
                 </div>
-                <div class="write"></div>
+                <div class="write">
+
+                </div>
             </div>
         </div>
 
