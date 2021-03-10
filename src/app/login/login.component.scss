@@ -1,0 +1,171 @@
+main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    // background: url('../../assets/images/section-BG/WaveyWhite.svg');
+    overflow: hidden;
+}
+
+.login{
+    width: calc(250px + 15%);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--colorSecondary);
+    border: 4px solid var(--colorAccent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    transition: 1s;
+
+    &.active{
+        top: 50%;
+    }
+
+    &.naah{
+        top: -100%;
+    }
+
+    .background-img{
+        position: absolute;
+        z-index: -1;
+        width: 20rem;
+        &.right{
+            top: -5rem;
+            right: -5rem;
+            transform: rotate(45deg);
+        }
+
+        &.left{
+            bottom: -3rem;
+            left: -5rem;
+            transform: rotate(-110deg);
+        }
+    }
+
+    h1{
+        color: white;
+        font-size: 4rem;
+        margin: 2rem;
+    }
+
+    .switch{
+        margin-top: 1rem;
+        transition: 0.3s;
+        border: none;
+        background-color: transparent;
+        
+        &:hover{
+            cursor: pointer;
+            color: tomato;
+        }   
+    }
+
+    img{
+        width: 30%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    // into component
+    app-input{
+        width: 70%;
+    }
+    // component
+    button{
+        position: relative;
+        width: 12rem;
+        height: 3rem;
+        border: 3px solid var(--colorPrimary);
+        background-color: var(--colorPrimary);
+        color: white;
+        font-size: 1rem;
+        margin: 1rem;
+        margin-top: 4rem;
+        cursor: pointer;
+
+        .background{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s ease;
+            background-color: var(--colorSecondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        &:hover{
+            border-color: transparent;
+            .background{
+                //left: 0.2rem;
+                //top: 0.2rem;
+                background-color: var(--colorAccent);
+            }
+        }
+    }
+}
+
+
+
+.register{
+    width: calc(300px + 40%);
+    height: 65vh;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 3px 1px rgb(216, 216, 216);
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    transition: 1s;
+    overflow: hidden;
+
+    &.active{
+        top: 50%;
+    }
+
+    &.naah{
+        top: 200%;
+    }
+
+    img{
+        flex: 1 1 20rem;
+        background-position: center;
+        background-size: initial;
+        max-width: 50%;
+        display: flex;
+    }
+
+    .form{
+        flex: 1 1 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        input{
+            width: 70%;
+            padding: 0.7rem;
+            font-size: var(--text);
+            border: none;
+            background-color: rgb(236, 236, 236);
+            border-radius: 10px;
+            margin: 0.5rem;
+        }
+    }
+}
+
+input{
+    border: 1px solid transparent;
+}
+
+

@@ -22,6 +22,8 @@ import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
 import { PostComponent } from './post/post.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { FooterComponent } from './footer/footer.component';
     AboutComponent,
     NewsComponent,
     PostComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

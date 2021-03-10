@@ -1,0 +1,79 @@
+<main>
+    <form class="login" [ngClass]="(active == true)?'active':'naah'" #loginform='ngForm'>
+        <!--
+        <img src="assets/icons/logo-krak.png" alt="">    
+        -->
+        <img src="../../assets/images/BGs/coral2-blue.png" alt="" class="background-img left">
+        <img src="../../assets/images/BGs/coral2-blue.png" alt="" class="background-img right">
+        
+        <h1>Log In</h1>
+
+        <!--
+        <input type="email" 
+        placeholder="Email" 
+        name='LoginMail' 
+        [(ngModel)]="loginCreds.mail" required>
+        <input type="password" 
+        placeholder="Password" 
+        name='LoginPassword' 
+        [(ngModel)]="loginCreds.password" required>            
+        -->
+        <app-input 
+        [label]="'Email'" 
+        [placeholder]="'Email'" 
+        [(inputModel)]="loginCreds.mail" 
+        [type]="'email'"
+        [darkMode]='false'></app-input>
+        <app-input 
+        [label]="'Password'" 
+        [placeholder]="'Password'" 
+        [(inputModel)]="loginCreds.password" 
+        [type]="'password'"
+        [darkMode]='false'></app-input>
+
+
+        <button>
+            <div class="background">
+                Login
+            </div>
+        </button>
+        <!--
+        <button type="submit" (click)='login()' [disabled]="!loginform.form.valid" >Log In</button>
+
+        <button class="switch" (click)='switch()'>Don't have an account?</button>
+        -->
+    </form>
+    <!--
+    <section class="register" [ngClass]="(active == false)?'active':'naah'">
+        <img src="../../assets/images/corals/coral1.png" alt="">
+        <form class="form" #registerform='ngForm'>
+            <h1>Register</h1>
+            
+            <input type="email" 
+            placeholder="Email" 
+            name='RegisterMail' 
+            [(ngModel)]="registerCreds.mail" required>
+    
+            <input type="password" 
+            placeholder="Password" 
+            name='RegisterPass1' 
+            [(ngModel)]="registerCreds.password1" required>
+    
+            <input type="password" 
+            placeholder="Repeat Passowrd" 
+            name='RegisterPass2' 
+            [(ngModel)]="registerCreds.password2" required>
+    
+            <input type="text" 
+            placeholder="Display Name" 
+            name='DisplayName' 
+            [(ngModel)]="registerCreds.userName" required>
+    
+            <button type="submit" (click)='register()' [disabled]="!registerform.form.valid" >Register</button>
+            <button class="switch" (click)='switch()'>Already have an account?</button>
+            
+        </form>
+    </section>        
+    -->
+
+</main>

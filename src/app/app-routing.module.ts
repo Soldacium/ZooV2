@@ -9,6 +9,8 @@ import { FishesComponent } from './fishes/fishes.component';
 import { FishGoldenComponent } from './fishes/fish-golden/fish-golden.component';
 import { FishJellyComponent } from './fishes/fish-jelly/fish-jelly.component';
 import { NewsComponent } from './news/news.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,14 @@ const routes: Routes = [
   {
     path: 'news', 
     component: NewsComponent
+  },
+  {
+    path: 'login', 
+    component: LoginComponent
+  },
+  { // guard here
+    path: 'admin', 
+    component: AdminComponent
   },
   {
     path: 'tickets',
