@@ -24,6 +24,7 @@ import { PostComponent } from './post/post.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { ButtonThreeComponent } from './shared/components/button-three/button-three.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AdminComponent } from './admin/admin.component';
     PostComponent,
     FooterComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    ButtonThreeComponent
   ],
   imports: [
     BrowserModule,
