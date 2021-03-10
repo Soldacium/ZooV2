@@ -1,0 +1,213 @@
+main{
+    width: 100vw;
+    padding: 0 15%;
+    overflow-y: hidden;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .background{
+        position: absolute;
+
+        .first{
+            
+        }
+    }
+}
+
+.water{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    background-image: url('../../assets/images/BGs/wave2.png');
+}
+
+
+
+.calendar {
+    width: 100%;
+    margin: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    *{
+        // margin: 0.5rem 0rem;
+    }
+
+    .month-year{
+        margin: auto;
+    }
+
+    .choose{
+        display: flex;
+
+        button{
+            font-size: 1rem;
+            border: none;
+            padding: 1rem 3rem;
+            transition: 0.3s;
+            margin: 0.5rem;
+
+            &:hover{
+                filter: brightness(70%);
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .calendar-wrap{
+        width: 60%;
+        height: 50vh;
+        position: relative;
+        background-color: rgba(255, 235, 205, 0);
+
+        .dayNames{
+            width: 100%;
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+            
+            div{
+                flex: 1 1 5rem;
+                padding: 0.5rem;
+                display: flex;
+                justify-content: center;
+                border: 1px solid rgba(0, 0, 0, 0);
+            }
+        }
+
+        .days{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgba(137, 43, 226, 0);
+
+            .day{
+                display: flex;
+                flex: 1 1 13%;
+                height: 20%;
+                position: relative;
+                background-color: var(--colorAccent);
+                color: white;
+                margin: 2px;
+                left: 0;
+                top: 0;
+                padding: 10px;
+                transition: 0.3s;
+                overflow: hidden;
+                flex-direction: column;
+                align-items: flex-start;
+                animation: newDay 0.8s;
+
+                &.missing{
+                    filter: brightness(85%);
+                }
+
+                &:hover{
+                    background-color: var(--colorPrimary);
+                    border: 3px solid var(--colorSecondary);
+                    cursor: pointer;
+                    top: -0.5rem;
+                    left: -0.5rem;
+                }
+
+                .day-event{
+                    padding: 0.3rem;
+                    background-color: gray;
+                    color: rgb(0, 0, 0);
+                    border-radius: 0.3rem;
+                    font-weight: 400;
+                    margin: 0.3rem 0;
+                }
+            }
+        }
+    } 
+}
+
+@keyframes newDay{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+/*
+.dayNames > div:nth-of-type(1){filter: grayscale(35%);}
+.dayNames > div:nth-of-type(2){filter: grayscale(30%);}
+.dayNames > div:nth-of-type(3){filter: grayscale(25%);}
+.dayNames > div:nth-of-type(4){filter: grayscale(20%);}
+.dayNames > div:nth-of-type(5){filter: grayscale(15%);}
+.dayNames > div:nth-of-type(6){filter: grayscale(10%);}
+.dayNames > div:nth-of-type(7){filter: grayscale(5%);}
+.day-event:nth-of-type(1n){background-color: rgb(206, 255, 133);}
+.day-event:nth-of-type(2n){background-color: rgb(255, 198, 124);}
+.day-event:nth-of-type(4n){background-color: rgb(253, 124, 195);}
+@media screen and (max-width: 1000px){
+    main{
+        width: 100%;
+    }
+}
+
+*/
+
+
+.posts{
+    width: 100%;
+    padding: 10% 0;
+    display: flex;
+    justify-content: center;  
+    flex-wrap: wrap;
+    position: relative;
+    // into component  
+    .post-thumbnail{
+        display: flex;
+        flex: 1 1 35rem;
+        background-color: var(--colorSecondary);
+        height: 18rem;
+        margin: 1rem;
+        position: relative;
+
+
+        &:hover{
+            .content{
+                top: -2rem;
+                left: -2rem;
+                cursor: pointer;
+                background-color: var(--colorAccent);
+                img{
+                    top: -1rem;
+                    left: -1rem;
+                }
+            }
+        }
+        .content{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            border: 4px solid var(--colorSecondary);
+            top: 0;
+            left: 0;
+            background-color: var(--colorPrimary);
+            transition: 0.3s;
+            color: white;
+
+            img{
+                position: relative;
+                width: 60%;
+                left: 0%;
+                top: 0%;
+                transition: 0.5s;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+.sidenav{
+    width: 30%;
+}
+

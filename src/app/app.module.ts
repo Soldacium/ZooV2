@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { FishJellyComponent } from './fishes/fish-jelly/fish-jelly.component';
 import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NewsComponent } from './news/news.component';
     ButtonFancyComponent,
     FishJellyComponent,
     AboutComponent,
-    NewsComponent
+    NewsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

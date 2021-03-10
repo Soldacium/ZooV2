@@ -1,1 +1,84 @@
-<p>news works!</p>
+<main>
+
+    <div class="water"></div>
+    
+    <span class="background first"></span>
+    <span class="background first"></span>
+    <section class="calendar">
+        <!--
+        <h1 class="month-year">
+            {{monthName}} {{thisYear}}
+        </h1>
+        <div class="choose">
+            <button class="prev" (click)='previousMonth()'>Prev</button>
+            <button class="current">Curr</button>
+            <button class="next" (click)='nextMonth()'>Next</button>
+        </div>            
+        -->
+
+        <div class="calendar-wrap">
+    
+            <div class="dayNames">
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+                <div>Sun</div>
+            </div>
+            <div class="days">
+                <div class="day missing" *ngFor='let fillerDay of thisMonthFillerDays.before'>
+                    {{fillerDay }}
+                </div>
+                <div class="day" *ngFor='let day of thisMonthDays'>
+                    <div>
+                        {{day.date.getDate()}}  
+    
+                    </div>
+                    <div class="day-event" *ngFor='let event of day.events'>
+                        {{event}}
+                    </div>
+                    
+                </div>
+                <div class="day missing" *ngFor='let fillerDay  of thisMonthFillerDays.after'>
+                    {{fillerDay }}
+                </div>
+            </div>
+        </div>  
+    </section>
+    <section class="posts">
+        <div class="post-thumbnail">
+            <div class="content">
+                <img src="../../assets/images/fish/fish-underwater-1.jpg" alt="">
+                <div class="text">
+                    <h1>Post1</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo maxime esse reprehenderit mollitia sed quia illo. Vitae error fuga eveniet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+        <div class="post-thumbnail"></div>
+    </section>
+    <!--
+    <section class="sidenav">
+        <div class="calendar"></div>
+        <div class="search"></div>
+    </section>        
+    -->
+
+</main>
+<div class="post-view">
+    
+</div>
