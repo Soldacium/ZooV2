@@ -1,18 +1,46 @@
 main{
     width: 100vw;
     padding: 0 15%;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    position: relative;
+    
 
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    transition: 2s;
 
     .background{
         position: absolute;
+        width: 30%;
+        pointer-events: none;
 
-        .first{
-            
+        &.first{
+            right: -10%;
+            top: 65vh;
+            transform: rotate(-100deg);
         }
+    }
+
+    &.active{
+        top: 0;
+        left: 0;
+    }
+
+    &.naah{
+        animation: hide-main forwards 2s;
+    }
+}
+@keyframes hide-main {
+    0%{
+        top: 0;
+    }99%{
+        top: -35%;
+    }100%{
+        top: -35%;
+        position: fixed;
     }
 }
 
@@ -25,17 +53,42 @@ main{
     background-image: url('../../assets/images/BGs/wave2.png');
 }
 
+.section-title{
+    font-size: 8rem;
+    text-shadow: var(--smooth-shadow-big);
+    color: white;
+    margin: 0;
+    margin-top: 2rem;
+    position: absolute;
+    top: 5rem;
+    left: 6rem;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    z-index: 10;
+
+}
 
 
 .calendar {
     width: 100%;
-    margin: 5rem 0;
+    margin: 3rem 0;
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
     *{
         // margin: 0.5rem 0rem;
+    }
+
+    .background{
+        width: 100%;
+        height: 100%;
+        left: -25rem;
+        top: -5rem;
+        border: 6px solid var(--colorSecondary);
+        pointer-events: none;
     }
 
     .month-year{
@@ -71,6 +124,9 @@ main{
             display: flex;
             border-radius: 10px;
             overflow: hidden;
+            font-weight: 500;
+            text-shadow: var(--smooth-shadow-big);
+            color: white;
             
             div{
                 flex: 1 1 5rem;
@@ -134,24 +190,6 @@ main{
     0%{opacity: 0;}
     100%{opacity: 1;}
 }
-/*
-.dayNames > div:nth-of-type(1){filter: grayscale(35%);}
-.dayNames > div:nth-of-type(2){filter: grayscale(30%);}
-.dayNames > div:nth-of-type(3){filter: grayscale(25%);}
-.dayNames > div:nth-of-type(4){filter: grayscale(20%);}
-.dayNames > div:nth-of-type(5){filter: grayscale(15%);}
-.dayNames > div:nth-of-type(6){filter: grayscale(10%);}
-.dayNames > div:nth-of-type(7){filter: grayscale(5%);}
-.day-event:nth-of-type(1n){background-color: rgb(206, 255, 133);}
-.day-event:nth-of-type(2n){background-color: rgb(255, 198, 124);}
-.day-event:nth-of-type(4n){background-color: rgb(253, 124, 195);}
-@media screen and (max-width: 1000px){
-    main{
-        width: 100%;
-    }
-}
-
-*/
 
 
 .posts{
@@ -181,6 +219,14 @@ main{
                     top: -1rem;
                     left: -1rem;
                 }
+
+                button{
+                    opacity: 1;
+
+                    img{
+                        margin-left: 1rem;
+                    }
+                }
             }
         }
         .content{
@@ -195,19 +241,316 @@ main{
             transition: 0.3s;
             color: white;
 
-            img{
+            >img{
                 position: relative;
                 width: 60%;
                 left: 0%;
                 top: 0%;
                 transition: 0.5s;
                 margin-right: 1rem;
+                
+            }
+            // component
+            button{
+                border: none;
+                background-color: transparent;
+                font-size: 1rem;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0.3rem 0.6rem;
+                position: absolute;
+                filter: invert(100%);
+                right: 1rem;
+                bottom: 1rem;
+                opacity: 0;
+                transition: 0.3s;
+                cursor: pointer;
+
+                img{
+                    transition: 0.3s;
+                    height: 1rem;
+                    margin-left: 0rem;
+                }
             }
         }
     }
 }
 
-.sidenav{
-    width: 30%;
+
+
+
+
+
+
+
+
+
+/* into component */
+
+.post-view{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    top: 100%;
+    position: fixed;
+    transition: 1s ease;
+    z-index: 20;
+    overflow-y: scroll;
+    padding: 0 20%;
+
+    .back{
+        position: fixed;
+        top: 5rem;
+        left: 5rem;
+        padding: 2rem;
+        transition: 0.5s;
+        transition-delay: 0.3s;
+        opacity: 1;
+        background-color: turquoise;
+        img{
+            height: 2rem;
+        }
+        &.naah{
+            left: -10rem;
+            opacity: 0;
+        }
+    }
+
+
+    &.active{
+        top: 0;
+    }
+
+    section{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        position: relative;
+    }
 }
+
+
+
+.header{
+    margin-bottom: 2rem;
+
+    .date{
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.5);
+        margin-bottom: 0.5rem;
+    }
+    .title{
+        font-size: 6rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid black;
+    }
+
+}
+
+.content {
+
+    .content-section{
+        margin-top: 5rem;
+        position: relative;
+        .title{
+            font-size: 2rem;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.068);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section-inside{
+            padding: 0 1rem;
+        }
+    }
+
+}
+
+textarea:focus, button:focus{
+    outline: none;
+}
+
+.comments{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem 0;
+    position: relative;
+
+    .write-comment,
+    .write-response{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+    
+        textarea{
+            width: 100%;
+            display: flex;
+            padding: 1rem;
+            font-size: 1rem;
+            border-radius: 1rem;
+            height: 160px;
+            resize: vertical;
+            background-color: rgb(245, 245, 245);
+            border: none;
+        }
+
+        button{
+            padding: 1rem 3rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            background-color: rgb(65, 65, 65);
+            
+            border-radius: 1rem;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: 0.3s;
+
+            &:hover{
+                background-color: yellow;
+            }
+        }
+    }
+
+    .write-response{
+        margin: 0.5rem 0;
+
+        textarea{
+            height: 100px;
+            border-radius: 1rem;
+            width: calc(100% - 3.5rem);
+        }
+
+        .write-response-buttons{
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+
+            button{
+                margin-top: 1rem;
+                margin-left: 0.5rem;
+                padding: 0.6rem 1.6rem;
+                font-size: 1rem;
+                font-weight: 600;
+                background-color: rgba(0, 0, 0, 0);
+                box-shadow: 0 2px 2px rgba(128, 128, 128, 0.233);
+                border-radius: 1rem;
+                border: none;
+                color: rgb(49, 49, 49);
+                cursor: pointer;
+            }
+
+            .cancel-button{
+                box-shadow: none;
+            }
+            .accept-button{
+                box-shadow: none;
+                color: white;
+                background-color: rgb(211, 0, 98);
+            }
+        }
+    }
+
+    .all-comments{
+        display: flex;
+        flex-direction: column-reverse;
+
+        .comment-thread{
+            position: relative;
+            margin: 0.5rem 0;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            background-color: rgb(255, 255, 255);
+            
+            border-radius: 0.5rem;
+            box-shadow: 0px 2px 2px 1px rgb(243, 243, 243);
+        
+            animation: fadeIn 0.5s ease;
+            left: 0;
+
+            .comment{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1.5rem;
+                left: 0;
+                position: relative;
+                animation: fadeIn 0.5s ease;
+
+                .comment-content{
+                    display: flex;
+
+                    *{
+                        position: relative;
+                    }
+
+                    .comment-image{
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        padding: 0.2rem;
+                        background-color: rgba(0, 0, 0, 0.116);
+                        margin-right: 1rem;
+                        border-radius: 50%;
+                    }
+
+                    .comment-creator{
+                        word-wrap: none;
+                        white-space: nowrap;
+                        text-decoration: none;
+                        font-weight: 500;
+                        color: rgb(190, 0, 89);
+                        margin-right: 1rem;   
+                    }
+                }
+                
+                .comment-options{
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    padding: 0.5rem 3.5rem;
+
+                    button{
+                        background-color: transparent;
+                        border: none;
+                        color: rgba(0, 0, 0, 0.295);
+                        font-weight: 600;
+                        padding: 0;
+                        margin-right: 1.5rem;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        &:hover{
+                            color: rgba(0, 0, 0, 0.76);
+                        }
+                    }
+                }
+            }
+
+            .comment-responses{
+                padding-left: 4rem;
+            }
+        }
+    }
+}
+
+
+@keyframes fadeIn{
+    0%{
+        left: -50px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
 

@@ -1,0 +1,44 @@
+<main class="footer">
+    <div class="subscribe">
+        <!--
+            <app-subscribe></app-subscribe>  
+        --> 
+    </div>
+    <div class="column">
+        <h1>Blog</h1>
+        <ul >
+            <li><a [routerLink]='["/main"]' [ngClass]="(router.isActive('/main',true))?'active':'naah'">Newest</a></li>
+            <li><a [routerLink]='["/login"]' [ngClass]="(router.isActive('/login',true))?'active':'naah'">TIL</a></li>
+            <li><a [routerLink]='["/main"]' [ngClass]="(router.isActive('/main',true))?'active':'naah'">Tricks</a></li>
+            <li><a [routerLink]='["/login"]' [ngClass]="(router.isActive('/login',true))?'active':'naah'">Style</a></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h1>About</h1>
+        <ul >
+            <li><a [routerLink]='["/main"]' [ngClass]="(router.isActive('/main',true))?'active':'naah'">Contact</a></li>
+            <li><a [routerLink]='["/login"]' [ngClass]="(router.isActive('/login',true))?'active':'naah'">Subscripe</a></li>
+            <li><a [routerLink]='["/main"]' [ngClass]="(router.isActive('/main',true))?'active':'naah'">Creators</a></li>
+
+        </ul>
+    </div>
+    <div class="column">
+        <h1>Main</h1>
+        <ul >
+            <li><a [routerLink]='["/main"]' [ngClass]="(router.isActive('/main',true))?'active':'naah'">Welcome</a></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h1>Guides</h1>
+        <ul >
+            <li><a [routerLink]='["/main"]' [ngClass]="(router.isActive('/main',true))?'active':'naah'">How to CSS</a></li>
+            <li><a [routerLink]='["/login"]' [ngClass]="(router.isActive('/login',true))?'active':'naah'">How to SCSS</a></li>
+            <li><a [routerLink]='["/main"]' [ngClass]="(router.isActive('/main',true))?'active':'naah'">How to Angular</a></li>
+
+        </ul>
+    </div>
+
+    <span class="background">
+        &#60;&#47;&#47;&#62;
+    </span>
+</main>

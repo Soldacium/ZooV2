@@ -11,26 +11,39 @@ export class NewsComponent implements OnInit {
   today!: Date;
   thisYear!: number;
   thisMonth!: number;
-
   activeDay = -1;
   thisMonthFillerDays: {before: number[], after: number[]} = {
     before: [],
     after: []
   };
-
-
   monthName!: string;
   monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
-];
-
+  'July', 'August', 'September', 'October', 'November', 'December'];
   todayEvents: any[] = [];
   currentEvent = 0;
-
   saved = [];
   makeSure = false;
-
   savedEvents: Array<object> = [];
+
+
+  posts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  currentPost = -1;
+
+
+  postComments = [
+    {
+      username: 'Guy123',
+      comment: 'ye, this tutorial fucking sucks, didnt learn anything, moreover, i think i know less than i knew before',
+      userID: '123',
+      userImg: 'assets/images/temp/temp1.jpg',
+      _id: '123',
+      responses: []
+    }
+  ]
+
+  commentInput = '';
+  responseInput = '';
+  isWritingResponse = '';
 
   constructor() { }
 
@@ -39,6 +52,26 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     this.calendarSetup();
     this.eventsSetup();
+
+  }
+
+  openPost(post: number){
+    this.currentPost = post;
+  }
+
+  closePost(){
+    this.currentPost = -1;
+  }
+
+  postComment(){
+
+  }
+
+  postResponse(comment: any){
+
+  }
+
+  deleteComment(){
 
   }
 
@@ -90,7 +123,7 @@ export class NewsComponent implements OnInit {
   modifySavedEvents(events: Array<object>): Array<object>{
     const modifiedEvents: any[] = [];
     events.forEach((savedEvent: any) => {
-      let time = JSON.parse(savedEvent.time)
+      let time = JSON.parse(savedEvent.time);
 
       time = this.normalizeTime(time);
       savedEvent.time = time;

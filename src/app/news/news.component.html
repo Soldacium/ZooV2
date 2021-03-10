@@ -1,10 +1,11 @@
-<main>
-
+<main [ngClass]='currentPost == -1 ? "active":"naah"'>
+    <h1 class="section-title">Aqua news</h1>
     <div class="water"></div>
-    
-    <span class="background first"></span>
-    <span class="background first"></span>
+    <img class="background first" src="../../assets/images/BGs/coral4.png"/>
+    <span class="background"></span>
+
     <section class="calendar">
+        <span class="background"></span>
         <!--
         <h1 class="month-year">
             {{monthName}} {{thisYear}}
@@ -15,9 +16,7 @@
             <button class="next" (click)='nextMonth()'>Next</button>
         </div>            
         -->
-
         <div class="calendar-wrap">
-    
             <div class="dayNames">
                 <div>Mon</div>
                 <div>Tue</div>
@@ -32,14 +31,8 @@
                     {{fillerDay }}
                 </div>
                 <div class="day" *ngFor='let day of thisMonthDays'>
-                    <div>
-                        {{day.date.getDate()}}  
-    
-                    </div>
-                    <div class="day-event" *ngFor='let event of day.events'>
-                        {{event}}
-                    </div>
-                    
+                    <div>{{day.date.getDate()}}  </div>
+                    <div class="day-event" *ngFor='let event of day.events'>{{event}}</div>   
                 </div>
                 <div class="day missing" *ngFor='let fillerDay  of thisMonthFillerDays.after'>
                     {{fillerDay }}
@@ -47,38 +40,119 @@
             </div>
         </div>  
     </section>
+
+
     <section class="posts">
-        <div class="post-thumbnail">
+        <div class="post-thumbnail" *ngFor='let post of posts' (click)='openPost(post)'>
             <div class="content">
                 <img src="../../assets/images/fish/fish-underwater-1.jpg" alt="">
                 <div class="text">
                     <h1>Post1</h1>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo maxime esse reprehenderit mollitia sed quia illo. Vitae error fuga eveniet.</p>
+                    <button>
+                        Read more <img src="../../assets/icons/arrow-right.svg" alt="">
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
-        <div class="post-thumbnail"></div>
     </section>
-    <!--
-    <section class="sidenav">
-        <div class="calendar"></div>
-        <div class="search"></div>
-    </section>        
-    -->
-
 </main>
-<div class="post-view">
+
+
+
+<div class="post-view" [ngClass]='currentPost == -1 ? "naah":"active"'>
+    <button class="back" (click)="closePost()" [ngClass]='currentPost == -1 ? "naah":"active"'></button>
+    <div class="self-ad" [ngClass]='currentPost == -1 ? "naah":"active"'>
+
+    </div>
+    <section class="header">
+        <div class="date">24.01.2016</div>
+        <div class="title">TIL#106: TITLE PENDING</div>
+        <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-section">
+            <div class="title">
+                Section1
+            </div>
+            <div class="content-text content-section-inside">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At accusantium, corporis necessitatibus, expedita nobis provident ducimus nemo est, praesentium dolore sapiente eum voluptatibus minima? Eius, inventore. Culpa placeat non pariatur a aliquid beatae, nobis ducimus veniam. Perspiciatis molestias in optio dolor. Incidunt natus animi pariatur corporis nisi quisquam debitis modi numquam. Eum illum labore hic eligendi. Necessitatibus itaque incidunt similique laboriosam aut omnis, qui autem earum praesentium perspiciatis quam debitis dolores! Ea quaerat natus tempora deserunt alias iusto hic? Quas sequi maxime laborum accusamus fuga corrupti ad laboriosam quo laudantium, dolore nostrum, dolorem consectetur officiis libero ab pariatur vel minus sunt aliquam quaerat optio, dolores delectus saepe soluta? Cupiditate vitae architecto necessitatibus temporibus, maiores nostrum doloremque in tempora neque dolores minus eos blanditiis tenetur officia qui odit optio dolorem distinctio iste incidunt. Voluptates explicabo nihil veritatis reprehenderit dolor maiores magni inventore quaerat saepe asperiores architecto ab minus, odit ullam dignissimos tempore quasi sapiente deserunt natus dolorem at pariatur quae nesciunt possimus? Dignissimos aspernatur sint vitae in doloremque possimus ab, doloribus non quia odio. Quaerat, sapiente? Deserunt consequuntur error voluptatem rem accusamus culpa dolores sit modi repellat delectus eum nihil doloremque laudantium illo sapiente necessitatibus, deleniti laborum iure quaerat aperiam saepe?
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="title"></div>
+            <div class="content-link"></div>
+        </div>
+    </section>
+
+    <section class="similar-posts">
+
+    </section>
+
+    <section class="comments">
+        <div class="write-comment">
+            <textarea name="" id="" cols="30" rows="10" [(ngModel)]='commentInput' (keyup.enter)='postComment()'>
     
+            </textarea>
+            <button (click)='postComment()' >Post</button>
+        </div>
+    
+        <div class="all-comments">
+            <div class="comment-thread" *ngFor='let comment of postComments'>
+                <div class="comment">
+                    <div class="comment-content">
+                        <img [src]=[comment.userImg] alt="" class="comment-image">
+                        <a class="comment-creator">{{comment.username || comment.userID}}</a>
+                        <div class="comment-text">
+                            {{comment.comment}}
+                        </div>                    
+                    </div>
+                    <div class="comment-options">
+                        <button (click)='isWritingResponse = comment._id'>Reply</button>
+                        <button>Delete</button>
+                    </div>
+    
+                    <div class="write-response" *ngIf='isWritingResponse === comment._id'>
+                        <textarea name="" id="" cols="30" rows="10" [(ngModel)]='responseInput' (keyup.enter)='postResponse(comment)'>
+    
+                        </textarea>
+                        <div class="write-response-buttons">
+                            <button (click)='isWritingResponse = ""' class='cancel-button'>Cancel</button>
+                            <button (click)='postResponse(comment)' class="accept-button">Post</button>
+                        </div>
+                        
+                    </div>
+    
+                </div>
+                <div class="comment-responses">
+                    <!--
+                    <div class="comment" *ngFor='let response of comment.responses'>
+                        <div class="comment-content">
+                            <img [src]=[response.userImg] alt="" class="comment-image">
+                            <a (click)='viewCompanion(response)' class="comment-creator">{{response.username || response.userID}}</a>
+                            <div class="comment-text">
+                                {{response.comment}}
+                            </div>                    
+                        </div>
+                        
+                        <div class="comment-options">
+                            <button>Reply</button>
+                            <button>Delete</button>
+                        </div>                        
+                        
+    
+        
+                    </div>
+                -->
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

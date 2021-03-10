@@ -9,7 +9,7 @@ import { Ticket } from '@shared/models/ticket.model';
 export class TicketsComponent implements OnInit {
 
   currentOption = -1;
-  currentPhase = 1;
+  currentPhase = 0;
   ticketType = -1;
 
   options = {

@@ -21,6 +21,7 @@ import { FishJellyComponent } from './fishes/fish-jelly/fish-jelly.component';
 import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
 import { PostComponent } from './post/post.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PostComponent } from './post/post.component';
     FishJellyComponent,
     AboutComponent,
     NewsComponent,
-    PostComponent
+    PostComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
