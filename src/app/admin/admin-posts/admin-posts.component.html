@@ -3,6 +3,18 @@
 
     </div>
     <div class="change-post">
-        
+        <app-input 
+        [label]="'Phone'" 
+        [placeholder]="'Phone'" 
+        [(inputModel)]="currentPost.title" 
+        [type]="'text'"
+        [darkMode]='false'></app-input>
+
+        <app-input 
+        [label]="'Phone'" 
+        [placeholder]="'Phone'" 
+        [(inputModel)]="currentPost.content" 
+        [type]="'text'"
+        [darkMode]='false'></app-input>
     </div>
 </main>

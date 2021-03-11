@@ -30,6 +30,7 @@ import { BoxesDiamondComponent } from './shared/components/boxes-diamond/boxes-d
 import { LinksDiamondComponent } from './shared/components/links-diamond/links-diamond.component';
 import { ButtonDiamondComponent } from './shared/components/button-diamond/button-diamond.component';
 import { WaterCornerComponent } from '@shared/components/water-corner/water-corner.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { WaterCornerComponent } from '@shared/components/water-corner/water-corn
     BoxesDiamondComponent,
     LinksDiamondComponent,
     ButtonDiamondComponent,
-    WaterCornerComponent
+    WaterCornerComponent,
+    PaginationComponent
 
   ],
   imports: [

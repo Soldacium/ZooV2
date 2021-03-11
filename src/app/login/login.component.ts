@@ -25,14 +25,14 @@ export class LoginComponent implements OnInit {
   active = true;
   constructor(private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  switch(){
+  switch(): void {
     this.active = !this.active;
   }
 
-  login(){
+  login(): void {
     try{
       // this.authService.login(this.loginCreds.mail,this.loginCreds.password).then(() => {})
         console.log('log in');
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  register(){
+  register(): void {
 
     const email = this.registerCreds.mail;
     const password1 = this.registerCreds.password1;
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     const displayName = this.registerCreds.userName;
 
 
-    if (password1 == password2){
+    if (password1 === password2){
       console.log('tryin to register..');
       console.log(displayName);
       /*

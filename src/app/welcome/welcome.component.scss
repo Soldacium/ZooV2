@@ -167,6 +167,13 @@ section {
 
 .about{
     background-color: var(--colorSecondary);
+
+    .background{
+        position: absolute;
+        width: 70%;
+        left: 40%;
+        top: -2%;
+    }
     .shape {
         position: absolute;
         left: 0;
@@ -228,12 +235,12 @@ section {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        box-shadow: var(--smooth-shadow-big);
 
         img{
             width: 90%;
             height: 80%;
             border: 16px solid var(--colorPrimary);
-            box-shadow: var(--smooth-shadow-big);
         }
 
         app-links-diamond{
