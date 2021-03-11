@@ -2,9 +2,11 @@
 main{
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     background-color: var(--colorPrimary);
+    top: 0;
+    left: 0;
 }
 
 button{
@@ -174,42 +176,3 @@ button{
     }
     
 }
-
-
-/*
-.wave{
-    position: absolute;
-    width: 143px;
-    height: 100%;
-    top: 0;
-    left: -143px;
-    background-image: url('../../../assets/images/BGs/wave.png');
-    background-position: center;
-    background-size: cover;
-    filter: brightness(00%) opacity(0.8);
-    animation: waveAnimation 10s infinite linear;
-    
-}
-.wave::before{
-    position: absolute;
-    content: '';
-    width: 143px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: url('../../../assets/images/BGs/wave.png');
-    background-position: center;
-    background-size: cover;
-    filter: brightness(00%) opacity(0.6);
-    animation: waveAnimation 20s infinite linear reverse;
-}
-
-@keyframes waveAnimation{
-    0%{
-    background-position-y: 0;
-    }
-    100%{
-        background-position-y: 1360px;
-    }
-}
-*/

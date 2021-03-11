@@ -8,7 +8,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { NavComponent } from './nav/nav.component';
-import { NavFishComponent } from './nav-fish/nav-fish.component';
 import { InputComponent } from './shared/components/input/input.component';
 import { FishFightingComponent } from './fishes/fish-fighting/fish-fighting.component';
 import { FishesComponent } from './fishes/fishes.component';
@@ -20,7 +19,6 @@ import { FormsModule } from '@angular/forms';
 import { FishJellyComponent } from './fishes/fish-jelly/fish-jelly.component';
 import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
-import { PostComponent } from './post/post.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
@@ -41,7 +39,6 @@ import { WaterCornerComponent } from '@shared/components/water-corner/water-corn
     TicketsComponent,
     ButtonComponent,
     NavComponent,
-    NavFishComponent,
     InputComponent,
     FishFightingComponent,
     FishesComponent,
@@ -50,7 +47,6 @@ import { WaterCornerComponent } from '@shared/components/water-corner/water-corn
     FishJellyComponent,
     AboutComponent,
     NewsComponent,
-    PostComponent,
     FooterComponent,
     LoginComponent,
     AdminComponent,

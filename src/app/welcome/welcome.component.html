@@ -13,29 +13,11 @@
 </div>
 <main>
     <section class = "intro">
-        <div class="water-top">
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-        </div>
-        <div class="text">
-            KRAKOW AQUARIUM
-        </div>
-
+        <div class="text">KRAKOW AQUARIUM</div>
         <app-button-diamond></app-button-diamond>
-        <div class="water-bottom">
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-        </div>
+        <app-water-corner class="top"></app-water-corner>
+        <app-water-corner class="bottom"></app-water-corner>
+
     </section>
     <section class = "attractions">
         <div class="coral"></div>
@@ -54,37 +36,6 @@
             [textTop]='"What to expect"'
             [textBottom]='"What to see"'></app-boxes-diamond>
         </div>
-        <!--
-        <div id="cover">
-            <div class="cover-logo-wrapper">
-                <div id="cover-logo">
-                    <div class="cover-logo-text top">What to expect</div>
-                    <div class="cover-logo-text bottom">What to see</div>
-                    <div id="cover-logo-box-1" class="cover-logo-boxes">
-                        <span>
-                            <img src="assets/images/BGs/clownfish-blue.png" alt="">
-                        </span>
-                    </div>
-                    <div id="cover-logo-box-2" class="cover-logo-boxes">
-                        <span>
-                            <img src="assets/images/BGs/orca-blue.png" alt="">
-                        </span>
-                    </div>
-                    <div id="cover-logo-box-3" class="cover-logo-boxes">
-                        <span>
-                            <img src="assets/images/BGs/jellyfish-blue.png" alt="">
-                        </span>
-                    </div>
-                    <div id="cover-logo-box-4" class="cover-logo-boxes">
-                        <span>
-                            <img src="assets/images/BGs/seaweed.png" alt="">
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>            
-        -->
-
     </section>
     <section class='about'>
         <div class="shape">
@@ -109,20 +60,9 @@
         </div>
         <div class="content-openings">
             <img src="../../assets/images/fish/fish-underwater-1.jpg" alt="">
-            <div class="choose">
-                <div class="next">
-                    <a class="next-square"></a>
-                </div>
-                <div class="next">
-                    <a class="next-square"></a>
-                </div>
-                <div class="next">
-                    <a class="next-square"></a>
-                </div>
-                <div class="next">
-                    <a class="next-square"></a>
-                </div>                    
-            </div>
+            <app-links-diamond [links]="routes" [width]="'1.5rem'"></app-links-diamond>
+
+
         </div>
     </section>
     <section class="map">

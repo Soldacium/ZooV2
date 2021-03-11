@@ -10,6 +10,9 @@ export class LinksDiamondComponent {
   @Input()
   links: Array<string> = [];
 
+  @Input()
+  width = '2rem';
+
   @Output() onclick1:
   EventEmitter<Event> = new EventEmitter<Event>();
 

@@ -29,9 +29,9 @@ const routes: Routes = [
     component: FishesComponent,
     // redirectTo: 'fishes/fighting',
     children: [
-      { path: 'fighting', component: FishFightingComponent, data: {animation: 'WelcomePage'} },
-      { path: 'golden', component: FishGoldenComponent, data: {animation: 'PostsListPage'}},
-      { path: 'jelly', component: FishJellyComponent, data: {animation: 'PostsListPage'}},
+      { path: 'fighting', component: FishFightingComponent, data: {animation: 'FishFighting'} },
+      { path: 'golden', component: FishGoldenComponent, data: {animation: 'FishGolden'}},
+      { path: 'jelly', component: FishJellyComponent, data: {animation: 'FishJelly'}},
     ]
   },
   {

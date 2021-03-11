@@ -1,5 +1,5 @@
 <nav class="links">
-    <div class="next" *ngFor='let link of links'>
+    <div class="next" *ngFor='let link of links' [style.padding]='width'>
         <a class="next-square" [routerLink]='[link]' routerLinkActive="active"></a>
     </div>  
 </nav>
