@@ -11,6 +11,8 @@ import { FishJellyComponent } from './fishes/fish-jelly/fish-jelly.component';
 import { NewsComponent } from './news/news.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { AdminPostsComponent } from './admin/admin-posts/admin-posts.component';
+import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,7 @@ const routes: Routes = [
   {
     path: 'fishes',
     component: FishesComponent,
+    // redirectTo: 'fishes/fighting',
     children: [
       { path: 'fighting', component: FishFightingComponent, data: {animation: 'WelcomePage'} },
       { path: 'golden', component: FishGoldenComponent, data: {animation: 'PostsListPage'}},
@@ -41,7 +44,11 @@ const routes: Routes = [
   },
   { // guard here
     path: 'admin', 
-    component: AdminComponent
+    component: AdminComponent,
+    children: [
+      { path: 'posts', component: AdminPostsComponent },
+      { path: 'orders', component: AdminOrdersComponent },
+    ]
   },
   {
     path: 'tickets',

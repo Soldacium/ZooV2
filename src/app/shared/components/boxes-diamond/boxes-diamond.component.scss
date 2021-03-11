@@ -1,0 +1,123 @@
+#cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#cover-logo-wrapper {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 10%;
+    height: 0;
+    padding: 5% 0;
+    border: solid 1px rgba(255,255,255,0.2);
+}
+
+#cover-logo {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 0;
+    padding: 50% 0;
+    text-align: center;
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+    .cover-logo-text{
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 120%;
+        font-size: 3rem;
+        color: white;
+        text-shadow: var(--smooth-shadow-big);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        &.top{
+            top: -15%;
+        }
+
+        &.bottom{
+            top: 115%;
+        }
+    }
+}
+
+
+.cover-logo-boxes {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 4px solid var(--colorSecondary);
+    background-color: var(--colorPrimary);
+    box-shadow: var(--smooth-shadow-big);
+}
+
+.cover-logo-boxes span {
+    display: block;
+    color: white;
+    transform: translate(-50% -50%);
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+     -ms-transform: translate(-50%, -50%) rotate(0deg);
+     -moz-transform: translate(-50%, -50%) rotate(0deg);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    transition: 0.6s;
+    z-index: 2;
+    cursor: pointer;
+
+    img{
+        position: absolute;
+        width: 100%;
+        top: 6rem;
+        right: 0rem;
+        transition: 0.6s;
+        transform: rotate(-45deg) scaleX(-1);
+        z-index: 6;
+    }
+
+    &:hover{
+        width: 150%;
+        height: 150%;
+
+        img{
+            top: 4rem;
+        }
+    }
+}
+
+#cover-logo-box-1 {
+    left: -0.5rem;
+    top: -0.5rem;
+}
+
+#cover-logo-box-2 {
+    right: -0.5rem;
+    top: -0.5rem;
+}
+
+#cover-logo-box-3 {
+    left: -0.5rem;
+    bottom: -0.5rem;
+}
+
+#cover-logo-box-4 {
+    right: -0.5rem;
+    bottom: -0.5rem;
+}

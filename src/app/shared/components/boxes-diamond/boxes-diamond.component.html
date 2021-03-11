@@ -1,0 +1,28 @@
+<div id="cover">
+    <div class="cover-logo-wrapper">
+        <div id="cover-logo">
+            <div class="cover-logo-text top">{{textTop}}</div>
+            <div class="cover-logo-text bottom">{{textBottom}}</div>
+            <div id="cover-logo-box-1" class="cover-logo-boxes" (click)="clickButton($event,0)">
+                <span>
+                    <img [src]="img1" alt="">
+                </span>
+            </div>
+            <div id="cover-logo-box-2" class="cover-logo-boxes" (click)="clickButton($event,1)">
+                <span>
+                    <img [src]="img2" alt="">
+                </span>
+            </div>
+            <div id="cover-logo-box-3" class="cover-logo-boxes" (click)="clickButton($event,2)">
+                <span>
+                    <img [src]="img3" alt="">
+                </span>
+            </div>
+            <div id="cover-logo-box-4" class="cover-logo-boxes" (click)="clickButton($event,3)">
+                <span>
+                    <img [src]="img4" alt="">
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

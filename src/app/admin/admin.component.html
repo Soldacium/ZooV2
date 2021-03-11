@@ -1,8 +1,10 @@
 <main>
     <nav>
-        <app-button-three [text]="'Posts'"></app-button-three>
-        <app-button-three [text]="'Animals'"></app-button-three>
-        <app-button-three [text]="'Orders'"></app-button-three>
-        <app-button-three [text]="'Stats'"></app-button-three>
+        <app-button-three-alt [text]="'Posts'" (onclick)="navigate('posts')"></app-button-three-alt>
+        <app-button-three-alt [text]="'Animals'" (onclick)="navigate('posts')"></app-button-three-alt>
+        <app-button-three-alt [text]="'Orders'" (onclick)="navigate('orders')"></app-button-three-alt>
+        <app-button-three-alt [text]="'Stats'"></app-button-three-alt>
     </nav>
+
+    <router-outlet></router-outlet>
 </main>

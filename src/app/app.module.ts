@@ -25,6 +25,13 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ButtonThreeComponent } from './shared/components/button-three/button-three.component';
+import { ButtonThreeAltComponent } from './shared/components/button-three-alt/button-three-alt.component';
+import { AdminPostsComponent } from './admin/admin-posts/admin-posts.component';
+import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { BoxesDiamondComponent } from './shared/components/boxes-diamond/boxes-diamond.component';
+import { LinksDiamondComponent } from './shared/components/links-diamond/links-diamond.component';
+import { ButtonDiamondComponent } from './shared/components/button-diamond/button-diamond.component';
+import { WaterCornerComponent } from '@shared/components/water-corner/water-corner.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +54,15 @@ import { ButtonThreeComponent } from './shared/components/button-three/button-th
     FooterComponent,
     LoginComponent,
     AdminComponent,
-    ButtonThreeComponent
+    ButtonThreeComponent,
+    ButtonThreeAltComponent,
+    AdminPostsComponent,
+    AdminOrdersComponent,
+    BoxesDiamondComponent,
+    LinksDiamondComponent,
+    ButtonDiamondComponent,
+    WaterCornerComponent
+
   ],
   imports: [
     BrowserModule,

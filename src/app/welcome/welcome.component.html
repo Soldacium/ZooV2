@@ -25,10 +25,8 @@
         <div class="text">
             KRAKOW AQUARIUM
         </div>
-        <div class="next">
-            <img class="arrow" src="../../assets/icons/arrow-down.svg"/>
-            <div class="next-square"></div>
-        </div>
+
+        <app-button-diamond></app-button-diamond>
         <div class="water-bottom">
             <div class="wave"></div>
             <div class="wave"></div>
@@ -46,6 +44,17 @@
 
             </div>
         </div>
+
+        <div class="diamond-links">
+            <app-boxes-diamond
+            [img1]='"assets/images/BGs/clownfish-blue.png"'
+            [img2]='"assets/images/BGs/orca-blue.png"'
+            [img3]='"assets/images/BGs/jellyfish-blue.png"'
+            [img4]='"assets/images/BGs/seaweed.png"'
+            [textTop]='"What to expect"'
+            [textBottom]='"What to see"'></app-boxes-diamond>
+        </div>
+        <!--
         <div id="cover">
             <div class="cover-logo-wrapper">
                 <div id="cover-logo">
@@ -73,7 +82,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>            
+        -->
+
     </section>
     <section class='about'>
         <div class="shape">
@@ -92,16 +103,8 @@
                     cum reprehenderit voluptatum eius earum vel, 
                     facere fugit nemo dignissimos porro voluptates 
                     numquam illo repudiandae deserunt?</p>
-                <button>
-                    <div class="background">
-                        Read article
-                    </div>
-                </button>
-                <button>
-                    <div class="background">
-                        Get more events
-                    </div>
-                </button>
+                <app-button-three-alt [text]="'Read article'"></app-button-three-alt>
+                <app-button-three-alt [text]="'Get more events'"></app-button-three-alt>
             </div>
         </div>
         <div class="content-openings">

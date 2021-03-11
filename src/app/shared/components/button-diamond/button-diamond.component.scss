@@ -1,0 +1,38 @@
+.next{
+    display: block;
+    position: relative;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding: 2rem 2rem;
+    cursor: pointer;
+
+    /*
+    &:hover{
+        .arrow{
+            top: 60%;
+        }
+    }
+    */
+
+    .arrow{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 2rem;
+        filter: invert(100%);
+        transition: 0.3s ease;
+    }
+
+    .next-square{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: 4px solid;
+        border-color: var(--colorSecondary);
+        transform: rotateZ(45deg);
+    }
+}

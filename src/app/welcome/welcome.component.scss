@@ -70,44 +70,9 @@ section {
         z-index: 10;
     }
 
-    .next{
-        display: block;
-        position: relative;
-        border: none;
-        font-size: 2.5rem;
-        font-weight: 500;
-        padding: 2rem 2rem;
-        cursor: pointer;
+    app-button-diamond{
 
-        &:hover{
-            .arrow{
-                top: 60%;
-            }
-        }
-
-        .arrow{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
-            width: 2rem;
-            filter: invert(100%);
-            transition: 0.3s ease;
-        }
-
-        .next-square{
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            border: 4px solid;
-            border-color: var(--colorSecondary);
-            transform: rotateZ(45deg);
-        }
     }
-
-
     .water-top{
         position: absolute;
         left: 0vw;
@@ -227,131 +192,13 @@ section {
             background-color: var(--colorAccent);
         }
     }
-
-    // to component cover
-    #cover {
+    app-boxes-diamond{
         position: absolute;
         width: 22%;
         height: 22%;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-    }
-    
-    #cover-logo-wrapper {
-        position: absolute;
-        z-index: 5;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        width: 10%;
-        height: 0;
-        padding: 5% 0;
-        border: solid 1px rgba(255,255,255,0.2);
-    }
-    
-    #cover-logo {
-        position: absolute;
-        z-index: 5;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        width: 100%;
-        height: 0;
-        padding: 50% 0;
-        text-align: center;
-        -ms-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-
-        .cover-logo-text{
-            position: absolute;
-            left: 50%;
-            top: 0;
-            width: 120%;
-            font-size: 3rem;
-            color: white;
-            text-shadow: var(--smooth-shadow-big);
-            transform: translate(-50%, -50%);
-            &.top{
-                top: -15%;
-            }
-
-            &.bottom{
-                top: 115%;
-            }
-        }
-    }
-    
-    
-    .cover-logo-boxes {
-        position: absolute;
-        width: 50%;
-        height: 50%;
-        border: 4px solid var(--colorSecondary);
-        background-color: var(--colorPrimary);
-        box-shadow: var(--smooth-shadow-big);
-    }
-    
-    .cover-logo-boxes span {
-        display: block;
-        color: white;
-        transform: translate(-50% -50%);
-        -webkit-transform: translate(-50%, -50%) rotate(0deg);
-         -ms-transform: translate(-50%, -50%) rotate(0deg);
-         -moz-transform: translate(-50%, -50%) rotate(0deg);
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        position: absolute;
-        transition: 0.6s;
-        z-index: 2;
-
-        img{
-            position: absolute;
-            width: 100%;
-            top: 6rem;
-            right: 0rem;
-            transition: 0.6s;
-            transform: rotate(-45deg) scaleX(-1);
-            z-index: 6;
-        }
-
-        &:hover{
-            width: 150%;
-            height: 150%;
-
-            img{
-                top: 4rem;
-            }
-        }
-    }
-    
-    #cover-logo-box-1 {
-        left: -0.5rem;
-        top: -0.5rem;
-    }
-    
-    #cover-logo-box-2 {
-        right: -0.5rem;
-        top: -0.5rem;
-    }
-    
-    #cover-logo-box-3 {
-        left: -0.5rem;
-        bottom: -0.5rem;
-    }
-    
-    #cover-logo-box-4 {
-        right: -0.5rem;
-        bottom: -0.5rem;
     }
 }
 
@@ -364,7 +211,6 @@ section {
         width: 100%;
         background-color: var(--colorSecondary);
         clip-path: polygon(0 0, 21% 0, 45% 20%, 45% 59%, 100% 100%, 0 100%);
-
 
         &::after{
             position: absolute;
@@ -404,40 +250,6 @@ section {
                 font-size: 1.5rem;
             }
             // make into component
-            button{
-                position: relative;
-                width: 16rem;
-                height: 4rem;
-                border: 3px solid var(--colorSecondary);
-                background-color: var(--colorSecondary);
-                color: white;
-                font-size: 1.3rem;
-                margin: 1rem;
-                cursor: pointer;
-
-                .background{
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    transition: 0.3s ease;
-                    background-color: var(--colorPrimary);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    
-                }
-
-                &:hover{
-                    border-color: transparent;
-                    .background{
-                        left: 0.5rem;
-                        top: 0.5rem;
-                        background-color: var(--colorAccent);
-                    }
-                }
-            }
         }
     }
 
