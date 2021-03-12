@@ -5,6 +5,15 @@ main{
     overflow: hidden;
 }
 
+.icon{
+    height: 8rem;
+    width: 8rem;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%,50%);
+}
+
 .login{
     width: calc(250px + 15%);
     position: absolute;
@@ -27,6 +36,8 @@ main{
     &.naah{
         top: -100%;
     }
+
+
 
     .background-img{
         position: absolute;

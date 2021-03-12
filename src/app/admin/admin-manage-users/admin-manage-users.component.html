@@ -1,0 +1,53 @@
+<main>
+    <div class="users-list">
+        <div class="user">
+            <div class="name">User1</div>
+            <div class="email">emailesagasd@gad.com</div>
+            <div class="rights">None</div>
+            <button class="del" (click)='deleteUser()'>Delete</button>
+            <button class="change">Change</button>
+        </div>
+    </div>
+    <!-- USER CHANGE CREDENTIALS SHOULD BE HERE -->
+    <div class="users-add">
+        <form class="register" #registerform='ngForm'>
+    
+            <h1>New user</h1>
+            <app-input 
+            [label]="'Username'" 
+            [placeholder]="'Username'" 
+            [(inputModel)]="registerCreds.username" 
+            [type]="'text'"
+            [darkMode]='false'></app-input>
+            <app-input 
+            [label]="'Email'" 
+            [placeholder]="'Email'" 
+            [(inputModel)]="registerCreds.mail" 
+            [type]="'email'"
+            [darkMode]='false'></app-input>
+            <app-input 
+            [label]="'Password'" 
+            [placeholder]="'Password'" 
+            [(inputModel)]="registerCreds.password1" 
+            [type]="'password'"
+            [darkMode]='false'></app-input>
+            <app-input 
+            [label]="'Repeat password'" 
+            [placeholder]="'Repeat password'" 
+            [(inputModel)]="registerCreds.password2" 
+            [type]="'password'"
+            [darkMode]='false'></app-input>
+            <div class="checkbox">
+                <input 
+                type="checkbox" 
+                id="html"   
+                [checked]="addNewAdmin"
+                (change)="addNewAdmin = !addNewAdmin">
+                <label for="html">Admin privliges</label>
+            </div>
+            <app-button-three [text]="'Register'" (onclick)='register()'></app-button-three>
+
+
+        </form>
+    </div>
+</main>

@@ -3,7 +3,7 @@
 </main>
 <nav [ngClass]="{'visible': openNav}">
     <app-button-three-alt [text]="'Posts'" (onclick)="navigate('posts')"></app-button-three-alt>
-    <app-button-three-alt [text]="'Animals'" (onclick)="navigate('posts')"></app-button-three-alt>
+    <app-button-three-alt [text]="'Users'" (onclick)="navigate('users')"></app-button-three-alt>
     <app-button-three-alt [text]="'Orders'" (onclick)="navigate('orders')"></app-button-three-alt>
     <app-button-three-alt [text]="'Stats'"></app-button-three-alt>
     <button (click)='openNav = !openNav'>

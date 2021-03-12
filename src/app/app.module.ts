@@ -37,6 +37,10 @@ import { SelectComponent } from './shared/components/select/select.component';
 import { PostComponent } from './shared/components/post/post.component';
 import { CalendarComponent } from './shared/components/calendar/calendar.component';
 import { PaginatorComponent } from '@shared/components/paginator/paginator.component';
+import { AuthInterceptor } from '@shared/interceptors/auth-interceptor';
+import { AuthService } from '@services/auth.service';
+import { PostsService } from '@services/posts.service';
+import { AdminManageUsersComponent } from './admin/admin-manage-users/admin-manage-users.component';
 
 
 @NgModule({
@@ -69,7 +73,8 @@ import { PaginatorComponent } from '@shared/components/paginator/paginator.compo
     SelectComponent,
     PostComponent,
     CalendarComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    AdminManageUsersComponent
 
   ],
   imports: [
@@ -80,7 +85,11 @@ import { PaginatorComponent } from '@shared/components/paginator/paginator.compo
     HttpClientModule,
     QuillModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    PostsService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

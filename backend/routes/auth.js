@@ -42,6 +42,14 @@ router.put('/signup/:id', (req,res,next) => {
       });
 })
 
+router.delete('/signup/:id',checkAuth,(req,res,next) => { 
+    User.deleteOne({_id: req.params.id}).then(result => {
+        console.log(result);
+        res.status(200).json({ message: 'post deleted'});
+    }) 
+    
+})
+
 router.get('/login/:id',(req,res,next) => {
     //get from database n shit
     User.findOne({_id: req.params.id}).then((user) => {

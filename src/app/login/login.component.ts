@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,17 +14,10 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  public registerCreds = {
-    mail: '',
-    password1: '',
-    password2: '',
-    userName: ''
-  };
-
   errorMsg!: string;
 
   active = true;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -39,26 +33,6 @@ export class LoginComponent implements OnInit {
     }catch {
       alert('no such credentials in database!');
     }
-
-  }
-
-  register(): void {
-
-    const email = this.registerCreds.mail;
-    const password1 = this.registerCreds.password1;
-    const password2 = this.registerCreds.password2;
-    const displayName = this.registerCreds.userName;
-
-
-    if (password1 === password2){
-      console.log('tryin to register..');
-      console.log(displayName);
-      /*
-      this.authService.signUp(email, password1, displayName)
-      .catch(error => this.errorMsg = error.message);
-      */
-    }
-
 
   }
 

@@ -4,10 +4,11 @@ const path = require('path');
 const bodyParser = require('body-parser');
 //mongoose for connecting to database
 const mongoose = require('mongoose');
-const keys = require('keys');
+const keys = require('./keys');
 
 //import routes
-const authRoutes = require('./routes/auth')
+const authRoutes = require('./routes/auth');
+const postsRoutes = require('./routes/posts');
 const app = express();
 
 
@@ -43,6 +44,7 @@ app.use((req,res,next) => {
 // for images
 // app.use("/images", express.static(path.join('backend/images')));
 app.use('/api/auth',authRoutes);
+app.use('/api/posts',postsRoutes);
 
 
 //export to server

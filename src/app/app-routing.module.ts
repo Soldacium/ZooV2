@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminPostsComponent } from './admin/admin-posts/admin-posts.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { AdminManageUsersComponent } from './admin/admin-manage-users/admin-manage-users.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
     children: [
       { path: 'posts', component: AdminPostsComponent },
       { path: 'orders', component: AdminOrdersComponent },
+      { path: 'users', component: AdminManageUsersComponent}
     ]
   },
   {

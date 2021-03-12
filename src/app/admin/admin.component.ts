@@ -14,6 +14,7 @@ export class AdminComponent {
 
   navigate(url: string): void {
     this.router.navigateByUrl(`admin/${url}`);
-  };
+    this.openNav = false;
+  }
 
 }

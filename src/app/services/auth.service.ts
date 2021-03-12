@@ -50,26 +50,34 @@ export class AuthService {
 
 
 
-  createUser(email: string, password: string, username: string): void {
+  createUser(email: string, password: string, username: string, fullRights: boolean): void {
 
-    const authData = {email, password, username};
+    const authData: User = {email, password, username, fullRights};
     this.http
     .post('http://localhost:3000/api/auth/signup', authData)
     .subscribe((res: any) => {
       if (res.message){
-        this.login(email, password);
+        // this.login(email, password);
       }
     });
   }
 
+  deleteUser(userID: string): void {
+    // const authData: User = {email, password, username, fullRights};
+    // let params1 = new HttpParams();
+    // params1 = params1.append('mode', 'delete-fromInvite');
 
-
-
-
+    this.http
+    .delete('http://localhost:3000/api/auth/signup/' + userID)
+    .subscribe((res: any) => {
+      if (res.message){
+        // this.login(email, password);
+      }
+    });
+  }
 
   login(email: string, password: string): void {
     const authData = {email, password};
-
     this.http
     .post<{token: string, userID: string, userData: any}>('http://localhost:3000/api/auth/login', authData)
     .subscribe((res: any) => {
@@ -80,7 +88,7 @@ export class AuthService {
         this.isAuth = true;
         this.user = res.userData;
         this.saveAuthData(token);
-        this.router.navigate(['/']);
+        // this.router.navigate(['/']);
       }
     });
   }
@@ -89,12 +97,8 @@ export class AuthService {
     this.token = '';
     this.isAuth = false;
     this.authStatusListener.next(false);
-
     this.deleteAuthData();
   }
-
-
-
 
   autoAuthUser(): void {
     const token = this.getAuthData();
@@ -125,11 +129,11 @@ export class AuthService {
     localStorage.removeItem('token');
     localStorage.removeItem('id');
   }
-  private getAuthData(){
+  private getAuthData(): {token: string, id: string} {
     const token = localStorage.getItem('token') as string;
     const id = localStorage.getItem('id') as string;
     if (!token){
-      return;
+      return {token: '', id: ''};
     }
     return {token, id};
   }
