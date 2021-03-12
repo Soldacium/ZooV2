@@ -33,6 +33,10 @@ import { BoxesDiamondComponent } from './shared/components/boxes-diamond/boxes-d
 import { LinksDiamondComponent } from './shared/components/links-diamond/links-diamond.component';
 import { ButtonDiamondComponent } from './shared/components/button-diamond/button-diamond.component';
 import { WaterCornerComponent } from '@shared/components/water-corner/water-corner.component';
+import { SelectComponent } from './shared/components/select/select.component';
+import { PostComponent } from './shared/components/post/post.component';
+import { CalendarComponent } from './shared/components/calendar/calendar.component';
+import { PaginatorComponent } from '@shared/components/paginator/paginator.component';
 
 
 @NgModule({
@@ -62,6 +66,10 @@ import { WaterCornerComponent } from '@shared/components/water-corner/water-corn
     LinksDiamondComponent,
     ButtonDiamondComponent,
     WaterCornerComponent,
+    SelectComponent,
+    PostComponent,
+    CalendarComponent,
+    PaginatorComponent
 
   ],
   imports: [

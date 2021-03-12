@@ -16,6 +16,7 @@
                 </div>
             </div>
         </div>
+        <app-paginator [pageSize]="10" [totalSize]="100"></app-paginator>
     </div>
     <div class="change-post-wrap" [ngClass]="{'full': viewMode === 1,'half': viewMode === 2,'none': viewMode === 3}">
         <button class="change-size" >

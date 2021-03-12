@@ -59,6 +59,10 @@ main{
         flex-wrap: wrap;
         overflow: auto;
 
+        app-paginator{
+            width: 100%;
+        }
+
         .post-thumbnail{
             display: flex;
             flex: 1 1 20rem;

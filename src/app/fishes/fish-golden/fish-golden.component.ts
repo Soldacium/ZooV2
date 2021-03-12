@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-fish-golden',
   templateUrl: './fish-golden.component.html',
   styleUrls: ['./fish-golden.component.scss']
 })
-export class FishGoldenComponent implements OnInit {
+export class FishGoldenComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,16 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
-export class AdminComponent implements OnInit {
-  
+export class AdminComponent {
+
   openNav = false;
-  
+
   constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
-
-
 
   navigate(url: string): void {
     this.router.navigateByUrl(`admin/${url}`);

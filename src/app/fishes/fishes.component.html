@@ -1,8 +1,5 @@
-<!--
-   <app-nav-fish></app-nav-fish> 
--->
 <div class="router-wrap" [@routeAnimations]="prepareRoute(outlet)">
-    <router-outlet #outlet='outlet' (activate)="onActivate($event)"></router-outlet>
+    <router-outlet #outlet='outlet'></router-outlet>
 </div>
 <app-links-diamond [links]="routes"></app-links-diamond>
 

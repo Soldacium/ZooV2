@@ -10,20 +10,10 @@ import { slideInAnimation } from './animations';
     slideInAnimation
   ]
 })
-export class FishesComponent implements OnInit {
-
-  constructor() { }
-
-  routes = ['/fishes/fighting','/fishes/golden','/fishes/jelly','/fishes/what'];
-
-  ngOnInit(): void {
-  }
+export class FishesComponent {
+  routes = ['/fishes/fighting', '/fishes/golden', '/fishes/jelly', '/fishes/what'];
 
   prepareRoute(outlet: RouterOutlet): RouterOutlet {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
-  }
-
-  onActivate(event: Event): void {
-    window.scroll(0, 0);
   }
 }

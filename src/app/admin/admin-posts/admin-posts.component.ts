@@ -19,7 +19,7 @@ export class AdminPostsComponent {
     comments: [],
     summary: '',
     image: ''
-  }
+  };
 
   public imagePath!: string;
   imgURL: any;
@@ -37,8 +37,9 @@ export class AdminPostsComponent {
 
   }
 
+  // into component
   /* files */
-  preview(files: any) {
+  preview(files: any): void {
 
     if (files.length === 0) {
       return;
@@ -59,14 +60,8 @@ export class AdminPostsComponent {
 
     this.file = files[0];
   }
-  /*
-  clickImage(){
-    document.getElementById('selectedFile').click();
-  }
-  */
 
   pickTag(type: string): void{
     this.chosenTag === type ? this.chosenTag = '' : this.chosenTag = type;
   }
-
 }

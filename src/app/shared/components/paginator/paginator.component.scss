@@ -1,0 +1,52 @@
+main{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorSecondary);
+
+    >*{
+        position: relative;
+    }
+
+    .arrow{
+        padding: 0.5rem;
+        cursor: pointer;
+        background-color: white;
+        border: none;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            height: 1.5rem;
+        }
+    }
+
+    .pages{
+        width: 90%;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+
+        .page{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.3rem;
+            color: white;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            transition: 0.3s ease;
+            background-color: var(--colorSecondary);
+            border: 2px solid var(--colorPrimary);
+            cursor: pointer;
+        }
+    }
+}

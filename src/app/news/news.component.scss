@@ -1,6 +1,6 @@
 main{
     width: 100vw;
-    padding: 0 15%;
+    padding: 5rem 15%;
     overflow-x: hidden;
     top: 0;
     left: 0;
@@ -11,6 +11,10 @@ main{
     justify-content: center;
     flex-wrap: wrap;
     transition: 2s;
+
+    app-paginator{
+        width: 50%;
+    }
 
     .background{
         position: absolute;
@@ -69,129 +73,9 @@ main{
 
 }
 
-
-.calendar {
-    width: 100%;
-    margin: 3rem 0;
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    *{
-        // margin: 0.5rem 0rem;
-    }
-
-    .background{
-        width: 100%;
-        height: 100%;
-        left: -25rem;
-        top: -5rem;
-        border: 6px solid var(--colorSecondary);
-        pointer-events: none;
-    }
-
-    .month-year{
-        margin: auto;
-    }
-
-    .choose{
-        display: flex;
-
-        button{
-            font-size: 1rem;
-            border: none;
-            padding: 1rem 3rem;
-            transition: 0.3s;
-            margin: 0.5rem;
-
-            &:hover{
-                filter: brightness(70%);
-                cursor: pointer;
-            }
-        }
-
-    }
-
-    .calendar-wrap{
-        width: 50%;
-        height: 40vh;
-        position: relative;
-        background-color: rgba(255, 235, 205, 0);
-
-        .dayNames{
-            width: 100%;
-            display: flex;
-            border-radius: 10px;
-            overflow: hidden;
-            font-weight: 500;
-            text-shadow: var(--smooth-shadow-big);
-            color: white;
-            
-            div{
-                flex: 1 1 5rem;
-                padding: 0.5rem;
-                display: flex;
-                justify-content: center;
-                border: 1px solid rgba(0, 0, 0, 0);
-            }
-        }
-
-        .days{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            background-color: rgba(137, 43, 226, 0);
-
-            .day{
-                display: flex;
-                flex: 1 1 13%;
-                height: 20%;
-                position: relative;
-                background-color: var(--colorAccent);
-                color: white;
-                margin: 2px;
-                left: 0;
-                top: 0;
-                padding: 10px;
-                transition: 0.3s;
-                overflow: hidden;
-                flex-direction: column;
-                align-items: flex-start;
-                animation: newDay 0.8s;
-
-                &.missing{
-                    filter: brightness(85%);
-                }
-
-                &:hover{
-                    background-color: var(--colorPrimary);
-                    border: 3px solid var(--colorSecondary);
-                    cursor: pointer;
-                    top: -0.5rem;
-                    left: -0.5rem;
-                }
-
-                .day-event{
-                    padding: 0.3rem;
-                    background-color: gray;
-                    color: rgb(0, 0, 0);
-                    border-radius: 0.3rem;
-                    font-weight: 400;
-                    margin: 0.3rem 0;
-                }
-            }
-        }
-    } 
+app-calendar{
+    width: 60vw;
 }
-
-@keyframes newDay{
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
-
 
 .posts{
     width: 100%;
@@ -347,17 +231,6 @@ main{
     }
 }
 
-
-
-
-
-
-
-
-
-
-/* into component */
-
 .post-view{
     background-color: white;
     width: 100vw;
@@ -387,239 +260,13 @@ main{
         }
     }
 
-
     &.active{
         top: 0;
     }
 
-    section{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        position: relative;
-    }
 }
 
 
 
-.header{
-    margin-bottom: 2rem;
-
-    .date{
-        font-size: 1rem;
-        color: rgba(0, 0, 0, 0.5);
-        margin-bottom: 0.5rem;
-    }
-    .title{
-        font-size: 6rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 3px solid black;
-    }
-
-}
-
-.content {
-
-    .content-section{
-        margin-top: 5rem;
-        position: relative;
-        .title{
-            font-size: 2rem;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.068);
-            margin-bottom: 2rem;
-            padding-bottom: 0.5rem;
-        }
-
-        .content-section-inside{
-            padding: 0 1rem;
-        }
-    }
-
-}
-
-textarea:focus, button:focus{
-    outline: none;
-}
-
-.comments{
-
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 2rem 0;
-    position: relative;
-
-    .write-comment,
-    .write-response{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
-        margin-bottom: 2rem;
-    
-        textarea{
-            width: 100%;
-            display: flex;
-            padding: 1rem;
-            font-size: 1rem;
-            border-radius: 1rem;
-            height: 160px;
-            resize: vertical;
-            background-color: rgb(245, 245, 245);
-            border: none;
-        }
-
-        button{
-            padding: 1rem 3rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-            background-color: rgb(65, 65, 65);
-            
-            border-radius: 1rem;
-            border: none;
-            color: white;
-            cursor: pointer;
-            margin-top: 0.5rem;
-            transition: 0.3s;
-
-            &:hover{
-                background-color: yellow;
-            }
-        }
-    }
-
-    .write-response{
-        margin: 0.5rem 0;
-
-        textarea{
-            height: 100px;
-            border-radius: 1rem;
-            width: calc(100% - 3.5rem);
-        }
-
-        .write-response-buttons{
-            display: flex;
-            width: 100%;
-            justify-content: flex-end;
-
-            button{
-                margin-top: 1rem;
-                margin-left: 0.5rem;
-                padding: 0.6rem 1.6rem;
-                font-size: 1rem;
-                font-weight: 600;
-                background-color: rgba(0, 0, 0, 0);
-                box-shadow: 0 2px 2px rgba(128, 128, 128, 0.233);
-                border-radius: 1rem;
-                border: none;
-                color: rgb(49, 49, 49);
-                cursor: pointer;
-            }
-
-            .cancel-button{
-                box-shadow: none;
-            }
-            .accept-button{
-                box-shadow: none;
-                color: white;
-                background-color: rgb(211, 0, 98);
-            }
-        }
-    }
-
-    .all-comments{
-        display: flex;
-        flex-direction: column-reverse;
-
-        .comment-thread{
-            position: relative;
-            margin: 0.5rem 0;
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            background-color: rgb(255, 255, 255);
-            
-            border-radius: 0.5rem;
-            box-shadow: 0px 2px 2px 1px rgb(243, 243, 243);
-        
-            animation: fadeIn 0.5s ease;
-            left: 0;
-
-            .comment{
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 1.5rem;
-                left: 0;
-                position: relative;
-                animation: fadeIn 0.5s ease;
-
-                .comment-content{
-                    display: flex;
-
-                    *{
-                        position: relative;
-                    }
-
-                    .comment-image{
-                        width: 2.5rem;
-                        height: 2.5rem;
-                        padding: 0.2rem;
-                        background-color: rgba(0, 0, 0, 0.116);
-                        margin-right: 1rem;
-                        border-radius: 50%;
-                    }
-
-                    .comment-creator{
-                        word-wrap: none;
-                        white-space: nowrap;
-                        text-decoration: none;
-                        font-weight: 500;
-                        color: rgb(190, 0, 89);
-                        margin-right: 1rem;   
-                    }
-                }
-                
-                .comment-options{
-                    display: flex;
-                    align-items: flex-end;
-                    justify-content: flex-start;
-                    padding: 0.5rem 3.5rem;
-
-                    button{
-                        background-color: transparent;
-                        border: none;
-                        color: rgba(0, 0, 0, 0.295);
-                        font-weight: 600;
-                        padding: 0;
-                        margin-right: 1.5rem;
-                        cursor: pointer;
-                        transition: 0.3s;
-
-                        &:hover{
-                            color: rgba(0, 0, 0, 0.76);
-                        }
-                    }
-                }
-            }
-
-            .comment-responses{
-                padding-left: 4rem;
-            }
-        }
-    }
-}
-
-
-@keyframes fadeIn{
-    0%{
-        left: -50px;
-    }
-    100%{
-        left: 0;
-    }
-}
 
 

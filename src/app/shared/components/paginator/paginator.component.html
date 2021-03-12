@@ -1,1 +1,14 @@
-<p>paginator works!</p>
+<main>
+    <button class="arrow left" (click)="prevPage()">
+        <img src="assets/icons/arrow-left.svg" alt="">
+    </button>
+    <div class="pages">
+        <div class="page" *ngFor='let page of totalPages' [style]='{left: (page - currentPage)*15 + 50 + "%", opacity: -getAbsolute(page)*27 + 100 + "%"}' (click)="goToPage(page)">
+            {{page}}
+        </div>        
+    </div>
+
+    <button class="arrow left" (click)="nextPage()">
+        <img src="assets/icons/arrow-right.svg" alt="">
+    </button>
+</main>

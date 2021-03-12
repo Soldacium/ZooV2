@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Post } from '@shared/models/post.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Event } from '@shared/models/event.model';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss']
+  selector: 'app-calendar',
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class CalendarComponent implements OnInit {
 
   thisMonthDays: { date: Date; events: any[]; }[] = [];
   today!: Date;
@@ -18,124 +18,27 @@ export class NewsComponent implements OnInit {
     after: []
   };
   monthName!: string;
-  monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'];
+  monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   todayEvents: any[] = [];
   currentEvent = 0;
   saved = [];
   makeSure = false;
   savedEvents: Array<object> = [];
 
-
-  posts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-  currentPost = -1;
-
-
-  postComments = [
-    {
-      username: 'Guy123',
-      comment: 'ye, this tutorial fucking sucks, didnt learn anything, moreover, i think i know less than i knew before',
-      userID: '123',
-      userImg: 'assets/images/temp/temp1.jpg',
-      _id: '123',
-      responses: []
-    }
-  ]
-
-  commentInput = '';
-  responseInput = '';
-  isWritingResponse = '';
-
-  mockPost: Post = {
-    title: '',
-    tags: [''],
-    date: '',
-    content: '',
-    comments: [],
-    summary: '',
-    image: ''
-  };
-
-  constructor() { }
-
-
-
-  ngOnInit() {
+  @Input() events: Event[] = [{title: '',date: ''}];
+  ngOnInit(): void {
     this.calendarSetup();
-    this.eventsSetup();
+    // this.eventsSetup();
   }
 
-  openPost(post: number){
-    this.currentPost = post;
-  }
 
-  closePost(){
-    this.currentPost = -1;
-  }
-
-  postComment(){
-
-  }
-
-  postResponse(comment: any){
-
-  }
-
-  deleteComment(){
-
-  }
-
-  /**
-   * EVENT FUNCTIONS
-   */
-
-  eventsSetup(){
-    /*
-    this.getSavedEvents();
-    this.authService.getUserListener().subscribe(user => {
-      //
-      this.eventsService.eventsReady.subscribe(ready => {
-
-        if (ready && this.savedEvents === undefined){
-          this.getSavedEvents();
-        }
-      });
-    });
-    */
-  }
-
-  getSavedEvents(){
-    /*
-    const saved = this.eventsService.getSavedEvents();
-    if (saved){
-      this.savedEvents = this.modifySavedEvents(saved);
-
-    }
-    */
-  }
-
-  normalizeTime(time: any){
-    const start = time.start.split('T');
-    const end = time.end.split('T');
-
-    start[0] = start[0].replaceAll('-', '/');
-    end[0] = end[0].replaceAll('-', '/');
-
-    const newTime = {
-      startDate: start[0],
-      startTime: start[1],
-      endDate: end[0],
-      endTime: end[1],
-    };
-    return newTime;
-  }
 
   modifySavedEvents(events: Array<object>): Array<object>{
     const modifiedEvents: any[] = [];
     events.forEach((savedEvent: any) => {
       let time = JSON.parse(savedEvent.time);
 
-      time = this.normalizeTime(time);
       savedEvent.time = time;
 
       modifiedEvents.push(savedEvent);
@@ -205,19 +108,7 @@ export class NewsComponent implements OnInit {
 
   }
 
-  nextToDo(){
-    if (this.currentEvent < this.todayEvents.length){
-      this.currentEvent += 1;
-    }
-  }
-
-  prevToDo(){
-    if (this.currentEvent > 0){
-      this.currentEvent -= 1;
-    }
-  }
-
-  nextMonth(){
+  nextMonth(): void {
     this.thisMonth += 1;
     if (this.thisMonth == 12){
       this.thisMonth = 0;
@@ -229,7 +120,7 @@ export class NewsComponent implements OnInit {
     this.monthName = this.monthNames[this.thisMonth];
   }
 
-  previousMonth(){
+  previousMonth(): void {
     this.thisMonth -= 1;
     if (this.thisMonth == -1){
       this.thisMonth = 11;
@@ -241,7 +132,7 @@ export class NewsComponent implements OnInit {
     this.monthName = this.monthNames[this.thisMonth];
   }
 
-  getMissingDays(){
+  getMissingDays(): void {
 
     this.thisMonthFillerDays.before = [];
     this.thisMonthFillerDays.after = [];

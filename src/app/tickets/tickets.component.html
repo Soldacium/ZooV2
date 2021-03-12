@@ -19,7 +19,6 @@
                     <div class="price">{{ticket.currency}}{{ticket.price}}</div>
                     <img [src]='ticket.image' alt="">
                 </div>
-
             </div>
         </div>
         <div class="phase" [style.right]='(currentPhase - 1) * 100  + "%"' >
@@ -54,7 +53,6 @@
                 </div>
             </div>
         </div>
-
         <div class="phase" [style.right]='(currentPhase - 2) * 100  + "%"' >
             <div class="payment-options">
                 <div class="type">Anytime
@@ -69,7 +67,6 @@
                 </div>
             </div>
         </div>
-
         <div class="tickets-arrows">
             <button class="arrow" (click)='prevPhase()' [disabled]='currentPhase == 0'>
                 <img src="assets/icons/arrow-left.svg" alt="">
@@ -95,9 +92,7 @@
                     facere fugit nemo dignissimos porro voluptates 
                     numquam illo repudiandae deserunt?</p>
             </div>
-            <span class="background">
-                
-            </span>
+            <span class="background"></span>
         </div>
     </section>
 </main>
