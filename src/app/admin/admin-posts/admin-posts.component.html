@@ -1,20 +1,74 @@
 <main>
-    <div class="view-posts">
-
+    <div class="view-posts" [ngClass]="{'full': viewMode === 3,'half': viewMode === 2,'none': viewMode === 1}">
+        <button class="change-size" >
+            <img src="../../../assets/icons/fullscreen.svg" alt="" (click)='viewMode = 3' *ngIf='viewMode !== 3'>
+            <img src="../../../assets/icons/smallscreen.svg" alt="" (click)='viewMode = 2' *ngIf='viewMode === 3'>
+        </button>
+        <div class="post-thumbnail" *ngFor='let post of posts' (click)='openPost(post)'>
+            <div class="content">
+                <img src="assets/images/fish/fish-underwater-1.jpg" alt="">
+                <div class="text">
+                    <h1>Post1</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo maxime esse reprehenderit mollitia sed quia illo. Vitae error fuga eveniet.</p>
+                    <button>
+                        Read more <img src="assets/icons/arrow-right.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="change-post">
-        <app-input 
-        [label]="'Phone'" 
-        [placeholder]="'Phone'" 
-        [(inputModel)]="currentPost.title" 
-        [type]="'text'"
-        [darkMode]='false'></app-input>
-
-        <app-input 
-        [label]="'Phone'" 
-        [placeholder]="'Phone'" 
-        [(inputModel)]="currentPost.content" 
-        [type]="'text'"
-        [darkMode]='false'></app-input>
+    <div class="change-post-wrap" [ngClass]="{'full': viewMode === 1,'half': viewMode === 2,'none': viewMode === 3}">
+        <button class="change-size" >
+            <img src="../../../assets/icons/fullscreen.svg" alt="" (click)='viewMode = 1' *ngIf='viewMode !== 1'>
+            <img src="../../../assets/icons/smallscreen.svg" alt="" (click)='viewMode = 2' *ngIf='viewMode === 1'>
+        </button>
+        <div class="change-post">
+            <div class="image">
+                <input #file type="file" id="selectedFile" style="display: none;"
+                accept='image/*' 
+                (change)="preview(file.files)"/>
+                <button (click)="file.click()"></button>
+                <img [src]="imgURL" *ngIf="imgURL">
+            </div>
+            <app-input 
+            [label]="'Title'" 
+            [placeholder]="'Title'" 
+            [(inputModel)]="currentPost.title" 
+            [type]="'text'"
+            [darkMode]='false'></app-input>
+        <!-- upload to quickComponents -->
+            <div class="tags">
+                <button class="tag" *ngFor='let tag of postTags' (click)='pickTag(tag)' [ngClass]="(chosenTag === tag?'active':'naah')">
+                    <div>{{tag}}</div>
+                </button>
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Summany of the post"></textarea>
+            <quill-editor></quill-editor>
+            <div class="checkbox">
+                <input 
+                type="checkbox" 
+                id="html"   
+                [checked]="addRelatedEvent"
+                (change)="addRelatedEvent = !addRelatedEvent">
+                <label for="html">Related to event</label>
+            </div>
+            <div class="add-event" *ngIf='addRelatedEvent'>
+                <app-input 
+                [label]="'Event name'" 
+                [placeholder]="'Event name'" 
+                [(inputModel)]="currentPost.title" 
+                [type]="'text'"
+                [darkMode]='false'></app-input> 
+                <app-input 
+                [label]="'Event time'" 
+                [placeholder]="'Event time'" 
+                [(inputModel)]="currentPost.date" 
+                [type]="'datetime-local'"
+                [darkMode]='false'></app-input>    
+                <textarea name="" id="" cols="30" rows="10" placeholder="Short description of the event"></textarea>       
+            </div>
+            <app-button-three [text]="'Add post!'"></app-button-three>
+        </div>
     </div>
+
 </main>

@@ -1,10 +1,12 @@
-<main>
-    <nav>
-        <app-button-three-alt [text]="'Posts'" (onclick)="navigate('posts')"></app-button-three-alt>
-        <app-button-three-alt [text]="'Animals'" (onclick)="navigate('posts')"></app-button-three-alt>
-        <app-button-three-alt [text]="'Orders'" (onclick)="navigate('orders')"></app-button-three-alt>
-        <app-button-three-alt [text]="'Stats'"></app-button-three-alt>
-    </nav>
-
+<main [ngClass]="{'hidden': openNav}">
     <router-outlet></router-outlet>
 </main>
+<nav [ngClass]="{'visible': openNav}">
+    <app-button-three-alt [text]="'Posts'" (onclick)="navigate('posts')"></app-button-three-alt>
+    <app-button-three-alt [text]="'Animals'" (onclick)="navigate('posts')"></app-button-three-alt>
+    <app-button-three-alt [text]="'Orders'" (onclick)="navigate('orders')"></app-button-three-alt>
+    <app-button-three-alt [text]="'Stats'"></app-button-three-alt>
+    <button (click)='openNav = !openNav'>
+        <img src="../../assets/icons/arrow-right.svg" alt="">
+    </button>
+</nav>

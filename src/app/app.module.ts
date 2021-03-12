@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { QuillModule } from 'ngx-quill'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -30,7 +33,7 @@ import { BoxesDiamondComponent } from './shared/components/boxes-diamond/boxes-d
 import { LinksDiamondComponent } from './shared/components/links-diamond/links-diamond.component';
 import { ButtonDiamondComponent } from './shared/components/button-diamond/button-diamond.component';
 import { WaterCornerComponent } from '@shared/components/water-corner/water-corner.component';
-import { PaginationComponent } from './pagination/pagination.component';
+
 
 @NgModule({
   declarations: [
@@ -59,14 +62,15 @@ import { PaginationComponent } from './pagination/pagination.component';
     LinksDiamondComponent,
     ButtonDiamondComponent,
     WaterCornerComponent,
-    PaginationComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    QuillModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

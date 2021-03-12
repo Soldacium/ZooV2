@@ -4,7 +4,7 @@
     margin-top: 1rem;
     width: 100%;
     background-color: rgb(250, 250, 250);
-    border-radius: 1rem;
+    border-radius: 0rem;
     overflow: hidden;
 }
 
@@ -41,7 +41,6 @@
 }
 
 .input-field:focus {
-    padding-bottom: 6px;
     font-weight: 500;
     border-width: 3px;
     border-image: linear-gradient(to right, #11998e, #38ef7d);

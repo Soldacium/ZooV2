@@ -7,11 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-
+  
+  openNav = false;
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+
 
   navigate(url: string): void {
     this.router.navigateByUrl(`admin/${url}`);

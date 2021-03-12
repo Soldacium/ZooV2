@@ -6,19 +6,67 @@ import { Post } from '@shared/models/post.model';
   templateUrl: './admin-posts.component.html',
   styleUrls: ['./admin-posts.component.scss']
 })
-export class AdminPostsComponent implements OnInit {
+export class AdminPostsComponent {
 
+  viewMode = 2;
+
+  posts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   currentPost: Post = {
     title: '',
     tags: [''],
-    date: new Date,
+    date: '',
     content: '',
-    comments: []
+    comments: [],
+    summary: '',
+    image: ''
   }
 
-  constructor() { }
+  public imagePath!: string;
+  imgURL: any;
+  public message!: string;
 
-  ngOnInit(): void {
+  file!: File;
+  posted = false;
+
+  chosenTag = '';
+  postTags: string[] = ['Party', 'Meeting', 'Concert', 'Happening', 'Opening', ];
+
+  addRelatedEvent = true;
+
+  openPost(post: number){
+
+  }
+
+  /* files */
+  preview(files: any) {
+
+    if (files.length === 0) {
+      return;
+    }
+
+    const mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = 'Only images are supported.';
+      return;
+    }
+
+    const reader = new FileReader();
+    this.imagePath = files;
+    reader.readAsDataURL(files[0]);
+    reader.onload = (_event) => {
+      this.imgURL = reader.result;
+    };
+
+    this.file = files[0];
+  }
+  /*
+  clickImage(){
+    document.getElementById('selectedFile').click();
+  }
+  */
+
+  pickTag(type: string): void{
+    this.chosenTag === type ? this.chosenTag = '' : this.chosenTag = type;
   }
 
 }
