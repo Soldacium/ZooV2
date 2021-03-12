@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "startServer": "nodemon server.js"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,13 @@
     "@angular/router": "~11.0.1",
     "@types/raphael": "^2.3.1",
     "animejs": "^3.2.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.0",
+    "mongoose-unique-validator": "^2.0.3",
+    "nodemon": "^2.0.7",
     "raphael": "^2.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
