@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Raphael from 'raphael';
+import anime from 'animejs';
 
 @Component({
   selector: 'app-welcome',
@@ -13,11 +14,113 @@ export class WelcomeComponent implements OnInit {
   routes = ['a', 'a', 'a', 'a'];
 
   currentHoveredPlace = '';
+  scrollY = window.scrollY;
+  windowHeight = window.innerHeight;
+
+  animationsDone = {
+    section1: false,
+    section2: false,
+    section3: false
+  }
+
+  elementIDs = {
+
+  }
+
+  colors = {
+    Primary: '#5CDB95',
+    Secondary: '#05386B',
+    Accent: '#379683',
+    Accent2: '#D81E5B',
+    Color: '#FCEFEF'
+  }
 
   ngOnInit(): void {
-    // const paper = Raphael(document.getElementById('paper') as HTMLElement, 500, 500);
-    // tslint:disable: max-line-length
+    this.setupMap();
+    this.setupAnimations();
 
+
+  }
+
+  setupAnimations(): void {
+    window.addEventListener('scroll', (e)=> {
+      this.scrollY = window.scrollY;
+      if(this.scrollY/this.windowHeight >= 0.25 && this.animationsDone.section1 === false ){
+        this.animateSectionOne();
+        this.animationsDone.section1 = true;
+      }
+
+      if(this.scrollY/this.windowHeight >= 1.05 && this.animationsDone.section2 === false ){
+        this.animateSectionTwo();
+        this.animationsDone.section2 = true;
+      }
+
+    });
+
+    this.animateWaves();
+
+  }
+
+  animateWaves(): void {
+    anime({
+      targets: '.wave-top',
+      direction: 'alternate',
+      loop: true,
+      duration: 4000,
+      translateX: -40,
+      easing: 'easeInOutQuad'
+    });
+
+    anime({
+      targets: '.wave-bottom',
+      direction: 'alternate',
+      loop: true,
+      duration: 4000,
+      translateX: 40,
+      rotate: [180,180],
+      delay: 1000,
+      easing: 'easeInOutQuad'
+    });
+  }
+
+  animateSectionOne(): void{
+    anime({
+      targets: '.coral',
+      duration: 2500,
+      translateY: [500,0],
+      opacity: [0,1],
+      rotate: -20,
+      easing: 'easeInOutElastic(1, .8)'
+    });
+
+    anime({
+      targets: '.diamond-buttons',
+      duration: 1000,
+      opacity: [0, 1],
+      delay: 1000,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.shape-attractions',
+      duration: 1200,
+      translateX: ['100%',0],
+      easing: 'easeOutExpo',
+      background: [this.colors.Primary, this.colors.Secondary]
+    });
+  }
+
+  animateSectionTwo(){
+    anime({
+      targets: '.shape-about',
+      duration: 1200,
+      translateX: ['-100%',0],
+      easing: 'easeOutExpo',
+      background: [this.colors.Secondary, this.colors.Primary]
+    });
+  }
+
+  setupMap(): void {
     const rsr = Raphael(document.getElementById('map-raphael') as HTMLElement, 900, 900);
     let group_a = rsr.set();
 

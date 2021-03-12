@@ -71,11 +71,11 @@ section {
 
     app-water-corner{
         position: absolute;
-        &.top{
+        &.wave-top{
             left: 0vw;
             top: 0; 
         }
-        &.bottom{
+        &.wave-bottom{
             right: 0vw;
             bottom: 0;
             transform: rotate(180deg);
@@ -114,6 +114,7 @@ section {
 
 .attractions{
     padding: 2rem;
+    // transform: translate(-100%, 0);
     .coral{
         position: absolute;
         left: 5%;
@@ -123,14 +124,16 @@ section {
         background-image: url('../../assets/images/BGs/coral2-blue.png');
         background-size: contain;
         transform: rotate(-15deg);
+        opacity: 0;
     }
-    .shape {
+    .shape-attractions {
         position: absolute;
         left: 0;
         top: 0;
         height: 100%;
         width: 100%;
-        background-color: var(--colorSecondary);
+        transform: translate(-100%, 0);
+        // background-color: var(--colorSecondary);
         clip-path: polygon(56% 0%, 100% 0, 100% 100%, 0 100%, 0 100%);
 
 
@@ -142,7 +145,7 @@ section {
             content: '';
             width: 100%;
             height: 100%;
-            background-color: var(--colorSecondary);
+            // background-color: var(--colorSecondary);
         }
 
         .content{
@@ -162,11 +165,13 @@ section {
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+        opacity: 0;
     }
 }
 
 .about{
     background-color: var(--colorSecondary);
+
 
     .background{
         position: absolute;
@@ -174,13 +179,14 @@ section {
         left: 40%;
         top: -2%;
     }
-    .shape {
+    .shape-about {
         position: absolute;
         left: 0;
         top: 0;
         height: 100%;
         width: 100%;
-        background-color: var(--colorSecondary);
+        transform: translate(-100%,0);
+        background-color: var(--colorPrimary);
         clip-path: polygon(0 0, 21% 0, 45% 20%, 45% 59%, 100% 100%, 0 100%);
 
         &::after{
@@ -191,7 +197,7 @@ section {
             content: '';
             width: 100%;
             height: 100%;
-            background-color: var(--colorPrimary);
+            // background-color: var(--colorPrimary);
         }
 
         .content-events{

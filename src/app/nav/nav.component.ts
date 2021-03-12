@@ -17,15 +17,11 @@ export class NavComponent implements OnInit {
 
   fillElement: any;
 
-
-
-
   ngOnInit(): void {
     this.fillElement = document.querySelector('.fill');
   }
 
   circleToSquare() :void{
-    console.log(this.fillElement);
     anime({
       targets: this.fillElement,
       width: ['3rem', '130vw'],
@@ -59,53 +55,6 @@ export class NavComponent implements OnInit {
     }
     
   }
-
-    /*
-    circleToSquare(element: HTMLElement, position: {x: string, y: string}, color: string) :void{
-    console.log(this.fillElement);
-    anime({
-      targets: element,
-      width: ['3rem', '130vw'],
-      height: ['3rem', '130vw'],
-      right: position.x,
-      top: position.y,
-      duration: 1000,
-      backgroundColor: color,
-      borderRadius: ['50%', '0%'],
-      easing: 'easeInOutQuad',
-
-    });
-  }
-
-  squareToCircle(element: HTMLElement, position: {x: string, y: string}, color: string) :void{
-    anime({
-      targets: element,
-      width: ['130vw', '3rem'],
-      height: ['130vw', '3rem'],
-      right: position.x,
-      top: position.y,
-      duration: 1000,
-      backgroundColor: color,
-      borderRadius: ['0%', '50%'],
-      easing: 'easeInOutQuad'
-    });
-  }
-
-  change(): void {
-    this.visible = !this.visible;
-    this.active = !this.active;
-    if(this.visible){
-      this.circleToSquare(this.fillElement,{x: '-300rem', y: '-3rem'}, 'green');
-    }else{
-      this.squareToCircle(this.fillElement,{x: '-300rem', y: '-3rem'}, 'yellow');
-    }
-    
-  }*/
-
-
-
-
-
 }
 
 
