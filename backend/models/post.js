@@ -8,8 +8,10 @@ const postSchema = mongoose.Schema({
     date: String,
     content: String,
     summary: String,
-    comments: [Comment],
-    relatedEventID: String,
+    comments: [], // comment
+    hasEvent: Boolean,
+    imageUrl: String
+
 });
 
 

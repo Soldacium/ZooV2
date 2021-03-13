@@ -27,35 +27,38 @@ const storage = multer.diskStorage({
     }
 });
 
-
-
-router.post('',
-    checkAuth,multer({storage: storage}).single('image'),(req,res,next) => {
+router.post('',multer({storage: storage}).single('image'),(req,res,next) => { //checkauth
     const url = req.protocol + '://' + req.get('host')
+    //console.log(req);
     const post = new Post({
         title: req.body.title,
-        desc: req.body.desc,
-        imagePath: url + '/images/' + req.file.filename,
+        summary: req.body.summary,
+        tags: req.body.tags,
+        date: req.body.date,
+        content: req.body.content,
+        comments: req.body.comments,
+        hasEvent: req.body.hasEvent,
+        imageUrl: url + '/images/' + req.file.filename,
     });
-    console.log(post);
+    
     post.save().then(createdPost => {
         res.status(201).json({
-            message: 'post added successfully',
-            post: {
-                id: createdPost._id,
+                _id: createdPost._id,
                 title: createdPost.title,
-                desc: createdPost.desc,
-                imagePath: createdPost.imagePath
-            }
-        })        
-    })
-
+                content: createdPost.content,
+                tags: createdPost.tags,
+                date: createdPost.date,
+                summary: createdPost.summary,
+                comments: createdPost.comments,
+                hasEvent: createdPost.hasEvent,
+                imageUrl: createdPost.imageUrl,
+            })        
+    });
 });
 
 
-router.put("/:id",
-    checkAuth, (req, res, next) => {
-    console.log(req,res)
+router.put("/:id", checkAuth, (req, res, next) => {
+    //console.log(req,res)
     const post = new Post({
         _id: req.body.id,
         title: req.body.title,
@@ -69,16 +72,10 @@ router.put("/:id",
 
 
 
-router.get(':id',(req,res,next) => {
-
-    Post.find().then((documents) => {
-        console.log(documents)
-        res.status(200).json({
-            message: 'hey',
-            posts: documents
-        });
+router.get('',(req,res,next) => {
+    Post.find().then((posts) => {
+        res.status(200).json(posts);
     });
-
 });
 
 

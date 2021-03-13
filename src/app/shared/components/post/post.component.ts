@@ -20,7 +20,8 @@ export class PostComponent implements OnInit {
     content: '',
     comments: [],
     summary: '',
-    image: ''
+    imageUrl: '',
+    hasEvent: false
   };
 
   @Output() inputModelChange = new EventEmitter<string>();

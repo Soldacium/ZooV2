@@ -53,7 +53,8 @@ export class NewsComponent implements OnInit {
     content: '',
     comments: [],
     summary: '',
-    image: ''
+    imageUrl: '',
+    hasEvent: false
   };
 
   constructor() { }

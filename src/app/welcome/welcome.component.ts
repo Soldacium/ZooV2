@@ -95,7 +95,7 @@ export class WelcomeComponent implements OnInit {
 
     anime({
       targets: '.diamond-buttons',
-      duration: 1000,
+      duration: 700,
       opacity: [0, 1],
       delay: 1000,
       easing: 'easeOutExpo'

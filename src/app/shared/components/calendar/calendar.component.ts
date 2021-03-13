@@ -26,7 +26,7 @@ export class CalendarComponent implements OnInit {
   makeSure = false;
   savedEvents: Array<object> = [];
 
-  @Input() events: Event[] = [{title: '',date: ''}];
+  @Input() events: Event[] = [{title: '',time: '',description: '', relatedPostID: ''}];
   ngOnInit(): void {
     this.calendarSetup();
     // this.eventsSetup();
