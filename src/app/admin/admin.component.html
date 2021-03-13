@@ -2,10 +2,17 @@
     <router-outlet></router-outlet>
 </main>
 <nav [ngClass]="{'visible': openNav}">
+    <div class="user">
+        <img src="../../assets/icons/user-admin.svg" *ngIf='user.fullRights'alt="">
+        <img src="../../assets/icons/user.svg" *ngIf='!user.fullRights'alt="">
+        <div class="username">{{user.username}}</div>
+        <div>{{user.email}}</div>
+    </div>
     <app-button-three-alt [text]="'Posts'" (onclick)="navigate('posts')"></app-button-three-alt>
     <app-button-three-alt [text]="'Users'" (onclick)="navigate('users')"></app-button-three-alt>
     <app-button-three-alt [text]="'Orders'" (onclick)="navigate('orders')"></app-button-three-alt>
     <app-button-three-alt [text]="'Stats'"></app-button-three-alt>
+    <app-button-three [text]="'Logout'" (onclick)="logout()"></app-button-three>
     <button (click)='openNav = !openNav'>
         <img src="../../assets/icons/arrow-right.svg" alt="">
     </button>

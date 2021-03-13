@@ -17,6 +17,7 @@ router.post('/signup', (req, res, next) => {
             email: req.body.email,
             password: hash,
             username: req.body.username,
+            fullRights: req.body.fullRights
         })     
         user
         .save()
@@ -42,12 +43,33 @@ router.put('/signup/:id', (req,res,next) => {
       });
 })
 
-router.delete('/signup/:id',checkAuth,(req,res,next) => { 
+router.delete('/signup/:id',(req,res,next) => { // checkAuth,
     User.deleteOne({_id: req.params.id}).then(result => {
         console.log(result);
         res.status(200).json({ message: 'post deleted'});
     }) 
-    
+})
+
+router.get('/signup/', (req,res,next) => { // checkauth
+    //get from database n shit
+    User.find().then(users => {
+        res.status(200).json(users);   
+    })
+    /*
+    User.findOne({_id: req.params.id}).then((user) => {
+
+        if(req.query.mode !== 'onlyCollections'){
+            res.status(200).json({
+                message: 'user gotten',
+                userData: user
+            });            
+        }else{
+            res.status(200).json({
+                message: 'user gotten'
+            });  
+        }
+    });
+    */
 })
 
 router.get('/login/:id',(req,res,next) => {

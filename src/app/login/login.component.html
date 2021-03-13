@@ -20,6 +20,6 @@
         [(inputModel)]="loginCreds.password" 
         [type]="'password'"
         [darkMode]='false'></app-input>
-        <app-button-three [text]="'Login'"></app-button-three>
+        <app-button-three [text]="'Login'" (onclick)='login()'></app-button-three>
     </form>
 </main>

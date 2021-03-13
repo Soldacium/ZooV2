@@ -28,7 +28,11 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     try{
-      // this.authService.login(this.loginCreds.mail,this.loginCreds.password).then(() => {})
+        this.authService.login(this.loginCreds.mail, this.loginCreds.password).subscribe((allowed: boolean) => {
+          if(allowed){
+            this.router.navigate(['/admin']);
+          }
+        });
         console.log('log in');
     }catch {
       alert('no such credentials in database!');

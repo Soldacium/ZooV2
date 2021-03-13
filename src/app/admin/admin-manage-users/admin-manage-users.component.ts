@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@services/auth.service';
+import { User } from '@shared/models/user.model';
 
 @Component({
   selector: 'app-admin-manage-users',
@@ -18,9 +19,14 @@ export class AdminManageUsersComponent implements OnInit {
 
   addNewAdmin = false;
 
+  users:any;
+  user!:User;
+
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.users = this.authService.getUsersFromDatabase();
+    this.user = this.authService.getUser();
   }
 
 
@@ -33,18 +39,13 @@ export class AdminManageUsersComponent implements OnInit {
 
 
     if (password1 === password2){
-      console.log('tryin to register..');
-      console.log(displayName);
+      console.log('tryin to register new user..');
       this.authService.createUser(email, password1, displayName, this.addNewAdmin)
-      /*
-      this.authService.signUp(email, password1, displayName)
-      .catch(error => this.errorMsg = error.message);
-      */
     }
   }
 
-  deleteUser(){
-    
+  deleteUser(_id: string){
+    this.authService.deleteUser(_id).subscribe(mes => mes);
   }
 
 

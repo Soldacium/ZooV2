@@ -23,6 +23,24 @@ nav{
     
     padding: 1rem 2rem;
     z-index: 100;
+
+    .user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        img{
+            height: 4rem;
+        }
+
+        .username{
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+    }
     
     app-button-three{
         font-size: 1.3rem;

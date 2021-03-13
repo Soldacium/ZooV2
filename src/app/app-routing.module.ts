@@ -14,6 +14,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminPostsComponent } from './admin/admin-posts/admin-posts.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminManageUsersComponent } from './admin/admin-manage-users/admin-manage-users.component';
+import { LoginGuardGuard } from '@shared/guards/login-guard.guard';
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
   { // guard here
     path: 'admin', 
     component: AdminComponent,
+    canActivate: [LoginGuardGuard],
     children: [
       { path: 'posts', component: AdminPostsComponent },
       { path: 'orders', component: AdminOrdersComponent },
