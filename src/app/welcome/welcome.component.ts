@@ -81,6 +81,15 @@ export class WelcomeComponent implements OnInit {
       delay: 1000,
       easing: 'easeInOutQuad'
     });
+
+    anime({
+      targets: '.water-zero',
+      duration: 2000,
+      opacity: [0, 1],
+      rotate: [-180,0],
+      delay: 500,
+      easing: 'easeOutExpo'
+    });
   }
 
   animateSectionOne(): void{
@@ -89,8 +98,24 @@ export class WelcomeComponent implements OnInit {
       duration: 2500,
       translateY: [500,0],
       opacity: [0,1],
-      rotate: -20,
+      rotate: 20,
       easing: 'easeInOutElastic(1, .8)'
+    });
+
+    anime({
+      targets: '.wave-bottom',
+      duration: 1000,
+      translateX: 400,
+      easing: 'easeInOutQuad',
+      opacity: 0
+    });
+
+    anime({
+      targets: '.diamond-button',
+      duration: 500,
+      opacity: [1, 0],
+      delay: 600,
+      easing: 'easeOutExpo'
     });
 
     anime({
@@ -102,11 +127,21 @@ export class WelcomeComponent implements OnInit {
     });
 
     anime({
+      targets: '.water-one',
+      duration: 700,
+      opacity: [0, 1],
+      translateX: ['-30%','-5%'],
+      rotate: -20,
+      delay: 500,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
       targets: '.shape-attractions',
       duration: 1200,
       translateX: ['100%',0],
       easing: 'easeOutExpo',
-      background: [this.colors.Primary, this.colors.Secondary]
+      // background: [this.colors.Primary, this.colors.Secondary]
     });
   }
 
@@ -117,6 +152,15 @@ export class WelcomeComponent implements OnInit {
       translateX: ['-100%',0],
       easing: 'easeOutExpo',
       background: [this.colors.Secondary, this.colors.Primary]
+    });
+
+    anime({
+      targets: '.water-two',
+      duration: 700,
+      opacity: [0, 1],
+      scale: [0.3, 1],
+      delay: 1000,
+      easing: 'easeOutExpo'
     });
   }
 

@@ -1,4 +1,30 @@
 
+nav{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem 1rem;
+    z-index: 125;
+
+    >*{
+        margin: 0 1.5rem;
+    }
+
+    a {
+        display: flex;
+        position: relative;
+        font-size: 1.5rem;
+        color: var(--colorSecondary);
+        font-weight: 700;
+        text-decoration: none;
+    }
+}
+
+
+
 
 canvas{
     position: absolute;
@@ -37,12 +63,11 @@ canvas{
 /************ HAMBURGER **************/
 
 .hamburger{
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    top: 40px;
-    right: 40px;
+    position: relative;
+    width: 40px;
+    height: 40px;
     z-index: 300;
+    margin: 0 1rem;
     cursor: pointer;
 
     span{
@@ -50,16 +75,17 @@ canvas{
         height: 6px;
         border-radius: 3px;
         width: 100%;
-        background: #f5f5f5;
+        background: var(--colorSecondary);
         top: 0;
         transition: transform .2s ease-in-out, opacity .2s ease-in-out;
-        &:nth-child(1){top:0px;}
-        &:nth-child(2),&:nth-child(3){top: 13px;}
-        &:nth-child(4){top:26px;}
+        &:nth-child(1){top:4px;}
+        &:nth-child(2),&:nth-child(3){top: 17px;}
+        &:nth-child(4){top:29px;}
     }
 
     &.active{
         span{
+            background: var(--colorPrimary);
             &:nth-child(1),&:nth-child(4){ opacity: 0;}
             &:nth-child(2){transform: rotate(45deg);}
             &:nth-child(3){transform: rotate(-45deg);}
@@ -69,8 +95,8 @@ canvas{
 
 
 
-  /********************* style overlay ***********************/
-  .overlay {
+/********************* style overlay ***********************/
+.overlay {
     position: fixed;
     top: 0;
     right: 0;
@@ -92,7 +118,7 @@ canvas{
     }
 }
 
-nav {
+.menu {
    font-size: 2rem;
    text-align: center;
 

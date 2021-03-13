@@ -13,13 +13,21 @@
 </div>
 <main>
     <section class = "intro">
-        <div class="text">KRAKOW AQUARIUM</div>
-        <app-button-diamond ></app-button-diamond>
+        <div class="text-block">
+            <div class="title">KRAKOW</div>
+            <div class="title two">AQUARIUM</div>   
+            <div class="subtitle">The grand opening</div>         
+        </div>
+        <img src="../../assets/images/BGs/water5.png" class="water-zero" alt="">
+
+        
+        <app-button-diamond class="diamond-button"></app-button-diamond>
         <app-water-corner class="wave-top"></app-water-corner>
         <app-water-corner class="wave-bottom"></app-water-corner>
 
     </section>
     <section class = "attractions">
+        <img src="../../assets/images/BGs/water4.png" alt="" class="background-water water-one">
         <div class="coral"></div>
         <div class="shape-attractions">
             <div class="content">
@@ -37,24 +45,23 @@
         </div>
     </section>
     <section class='about'>
-        <img src="../../assets/images/BGs/coral5-green.png" alt="" class="background">
-        <div class="shape-about">
-            <div class="content-events">
-                <h1>Event title</h1>
-                <div class="line"></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing 
-                    elit. Iure odio explicabo nesciunt incidunt velit 
-                    nobis eveniet animi. In, praesentium perferendis! 
-                    Accusamus alias aperiam ab, minus tenetur odio 
-                    provident, magni, itaque aut iusto dignissimos 
-                    dolores blanditiis veritatis animi. Corrupti, 
-                    rerum! Dignissimos, odit. Optio nisi adipisci 
-                    cum reprehenderit voluptatum eius earum vel, 
-                    facere fugit nemo dignissimos porro voluptates 
-                    numquam illo repudiandae deserunt?</p>
-                <app-button-three-alt [text]="'Read article'"></app-button-three-alt>
-                <app-button-three-alt [text]="'Get more events'"></app-button-three-alt>
-            </div>
+        <img src="../../assets/images/BGs/water6.png" alt="" class="background water-two">
+
+        <div class="content-events">
+            <h1>Event title</h1>
+            <div class="line"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+                elit. Iure odio explicabo nesciunt incidunt velit 
+                nobis eveniet animi. In, praesentium perferendis! 
+                Accusamus alias aperiam ab, minus tenetur odio 
+                provident, magni, itaque aut iusto dignissimos 
+                dolores blanditiis veritatis animi. Corrupti, 
+                rerum! Dignissimos, odit. Optio nisi adipisci 
+                cum reprehenderit voluptatum eius earum vel, 
+                facere fugit nemo dignissimos porro voluptates 
+                numquam illo repudiandae deserunt?</p>
+            <app-button-three-alt [text]="'Read article'"></app-button-three-alt>
+            <app-button-three-alt [text]="'Get more events'"></app-button-three-alt>
         </div>
         <div class="content-openings">
             <img src="../../assets/images/fish/fish-underwater-1.jpg" alt="">
@@ -62,7 +69,13 @@
         </div>
     </section>
     <section class="map">
+
         <div class='place-name'>{{currentHoveredPlace}}</div>
         <div id="map-raphael"></div>
+    </section>
+    <section class="offer">
+        <img src="../../assets/images/BGs/water1.png" alt="" class="background water-three">
+        <div class="text">Looks good?</div>
+        <app-button-three-alt [text]="'Book a visit!'"></app-button-three-alt>
     </section>
 </main>

@@ -1,25 +1,23 @@
 
-<div class="hamburger" (click)='change()'
-[ngClass]="active ? 'active' : 'naah' ">
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-</div>
+<nav>
+    <a href="">Animals</a>
+    <a href="">About</a>
+    <a href="">News</a>
+    <a href="">Tickets</a>
+    <div class="hamburger" (click)='change()'
+    [ngClass]="active ? 'active' : 'naah' ">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
 
-<div class="menuText">
-<p></p>
-</div>
 
 <div class="overlay" [ngClass]="visible ? 'visible' : 'naah'">
     <div class="fill"></div>
     <div class="fill2"></div>
-    <nav class="menu">
-        <!--
-        <canvas id='canvas'></canvas> 
-        -->
-        
-        
+    <div class="menu">
         <ul>
             <li><a [routerLink]='["welcome"]' (click)='change()'>Home</a></li>
             <li><a [routerLink]='["fishes/fighting"]' (click)='change()'>Animals</a></li>
@@ -27,6 +25,6 @@
             <li><a [routerLink]='["about"]' (click)='change()'>About</a></li>
             <li><a [routerLink]='["tickets"]' (click)='change()'>Tickets</a></li>
         </ul>
-    </nav>
+    </div>
 </div>
 
