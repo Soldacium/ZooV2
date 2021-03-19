@@ -97,7 +97,7 @@ export class TicketsComponent implements OnInit {
         color: '#31325F',
         fontWeight: '300',
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        fontSize: '18px',
+        fontSize: '1.3rem',
         '::placeholder': {
           color: '#CFD7E0'
         }
@@ -111,9 +111,17 @@ export class TicketsComponent implements OnInit {
 
   name: string = '';
 
-  constructor( private stripeService: StripeService) { }
+  stripeTest!: FormGroup;
+
+  constructor(private fb: FormBuilder, private stripeService: StripeService) { }
 
   ngOnInit(): void {
+    
+    this.stripeTest = this.fb.group({
+      name: ['', [Validators.required]]
+    }); 
+    let cardy = document.querySelector('.stripe-card');
+    console.log(cardy)
   }
 
   createToken(): void {
@@ -121,7 +129,7 @@ export class TicketsComponent implements OnInit {
 
 
     this.stripeService
-      .createToken(this.card.element, { name: this.name })
+      .createToken(this.card.element, { name: this.stripeTest.get('name')?.value })
       .subscribe((result) => {
         if (result.token) {
           // Use the token

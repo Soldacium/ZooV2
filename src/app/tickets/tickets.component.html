@@ -18,6 +18,7 @@
                     </ul>
                     <div class="price">{{ticket.currency}}{{ticket.price}}</div>
                     <img [src]='ticket.image' alt="">
+                    
                 </div>
             </div>
         </div>
@@ -54,23 +55,24 @@
             </div>
         </div>
         <div class="phase payment" [style.right]='(currentPhase - 2) * 100  + "%"' >
-            <form #loginform='ngForm'>
-                <app-input 
-                [label]="'Email'" 
-                [placeholder]="'Email'" 
-                [(inputModel)]="name" 
-                [type]="'email'"
-                [darkMode]='false'></app-input>
+            <div class="payment-container">
+                <form [formGroup]="stripeTest" (ngSubmit)="createToken()">
+                    <input type="text" formControlName="name" placeholder="Jane Doe">
+                    
+                    <ngx-stripe-card class="stripe-card"
+                        [options]="cardOptions"
+                        [elementsOptions]="elementsOptions"
+                    ></ngx-stripe-card>    
+                    <ngx-stripe-payment-request-button></ngx-stripe-payment-request-button>
+                    
 
-                <ngx-stripe-card
-                    [options]="cardOptions"
-                    [elementsOptions]="elementsOptions"
-                ></ngx-stripe-card>
-                <button type="submit">
-                    CREATE TOKEN
-                </button>
+                    <app-button-three-alt [text]="'Pay'"></app-button-three-alt>   
+                    
 
-            </form>
+                </form>  
+                       
+            </div>
+
         </div>
         <div class="tickets-arrows">
             <button class="arrow" (click)='prevPhase()' [disabled]='currentPhase === 0'>

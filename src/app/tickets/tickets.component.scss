@@ -340,7 +340,28 @@ section{
 }
 
 .payment{
-    ngx-stripe-card{
-        height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .payment-container{
+        width: calc(20% + 10rem);
+        height: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 1rem;
+        form{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        input{
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
     }
 }
