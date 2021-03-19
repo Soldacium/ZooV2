@@ -28,8 +28,7 @@ const storage = multer.diskStorage({
 });
 
 router.post('',multer({storage: storage}).single('image'),(req,res,next) => { //checkauth
-    const url = req.protocol + '://' + req.get('host')
-    //console.log(req);
+    const url = req.protocol + '://' + req.get('host');
     const post = new Post({
         title: req.body.title,
         summary: req.body.summary,
@@ -52,13 +51,12 @@ router.post('',multer({storage: storage}).single('image'),(req,res,next) => { //
                 comments: createdPost.comments,
                 hasEvent: createdPost.hasEvent,
                 imageUrl: createdPost.imageUrl,
-            })        
+            });    
     });
 });
 
 
 router.put("/:id", checkAuth, (req, res, next) => {
-    //console.log(req,res)
     const post = new Post({
         _id: req.body.id,
         title: req.body.title,
@@ -78,13 +76,18 @@ router.get('',(req,res,next) => {
     });
 });
 
+router.get('/:id',(req,res,next) => {
+    Post.findOne({_id: req.params.id}).then(result => {
+        res.status(200).json(result);
+    })
+})
+
 
 router.delete('/:id',
     checkAuth,(req,res,next) => { 
     Post.deleteOne({_id: req.params.id}).then(result => {
-        console.log(result);
-        res.status(200).json({ message: 'post deleted'});
-    }) 
+        res.status(200).json(result);
+    })
     
 })
 

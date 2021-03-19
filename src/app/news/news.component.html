@@ -1,46 +1,8 @@
-<main [ngClass]='!openedPost ? "active":"naah"'>
+<main>
     <h1 class="section-title">Aqua news</h1>
     <div class="water"></div>
     <img class="background first" src="../../assets/images/BGs/coral4.png"/>
     <span class="background"></span>
-<!--
-    <section class="calendar">
-        <span class="background"></span>
-        
-        <h1 class="month-year">
-            {{monthName}} {{thisYear}}
-        </h1>
-        <div class="choose">
-            <button class="prev" (click)='previousMonth()'>Prev</button>
-            <button class="current">Curr</button>
-            <button class="next" (click)='nextMonth()'>Next</button>
-        </div>            
-        
-        <div class="calendar-wrap">
-            <div class="dayNames">
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-                <div>Sun</div>
-            </div>
-            <div class="days">
-                <div class="day missing" *ngFor='let fillerDay of thisMonthFillerDays.before'>
-                    {{fillerDay }}
-                </div>
-                <div class="day" *ngFor='let day of thisMonthDays'>
-                    <div>{{day.date.getDate()}}  </div>
-                    <div class="day-event" *ngFor='let event of day.events'>{{event}}</div>   
-                </div>
-                <div class="day missing" *ngFor='let fillerDay  of thisMonthFillerDays.after'>
-                    {{fillerDay }}
-                </div>
-            </div>
-        </div>  
-    </section>-->
-
     <app-calendar></app-calendar>
 
 
@@ -79,10 +41,3 @@
     </section>
     <app-paginator [pageSize]="10" [totalSize]="100"></app-paginator>
 </main>
-
-
-
-<div class="post-view" [ngClass]='!openedPost ? "naah":"active"'>
-    <button class="back" (click)="closePost()" [ngClass]='!openedPost ? "naah":"active"'></button>
-    <app-post></app-post>
-</div>

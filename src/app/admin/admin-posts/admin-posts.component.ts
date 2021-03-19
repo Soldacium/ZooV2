@@ -10,20 +10,16 @@ import { Post } from '@shared/models/post.model';
 })
 export class AdminPostsComponent implements OnInit {
 
-
-
   viewMode = 2;
 
-  // posts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   posts!: any;
 
   public imagePath!: string;
   imgURL: any;
   public message!: string;
-
   file!: File;
-  posted = false;
 
+  posted = false;
   chosenTag = '';
   postTags: string[] = ['Party', 'Meeting', 'Concert', 'Happening', 'Opening', ];
 
@@ -34,7 +30,7 @@ export class AdminPostsComponent implements OnInit {
     description: '',
     title: '',
     time: ''
-  }
+  };
 
   currentPost: Post = {
     title: '',
@@ -44,7 +40,8 @@ export class AdminPostsComponent implements OnInit {
     comments: [],
     summary: '',
     imageUrl: '',
-    hasEvent: this.posted
+    hasEvent: this.posted,
+    _id: ''
   };
 
   constructor(private postsService: PostsService){}
@@ -53,21 +50,18 @@ export class AdminPostsComponent implements OnInit {
     this.posts = this.postsService.getPosts();
   }
 
-  openPost(post: Post){
-    
+  openPost(post: Post): void {
+    this.viewMode = 2;
     this.currentPost = post;
     this.imgURL = post.imageUrl;
-    console.log(this.currentPost);
   }
 
-  postPost(){
-    this.postsService.postPost(this.currentPost,this.file).subscribe(post => {
+  postPost(): void {
+    this.postsService.postPost(this.currentPost, this.file).subscribe(post => {
       console.log(post);
     });
   }
 
-  // into component
-  /* files */
   preview(files: any): void {
 
     if (files.length === 0) {
@@ -83,7 +77,7 @@ export class AdminPostsComponent implements OnInit {
     const reader = new FileReader();
     this.imagePath = files;
     reader.readAsDataURL(files[0]);
-    reader.onload = (_event) => {
+    reader.onload = (event) => {
       this.imgURL = reader.result;
     };
 

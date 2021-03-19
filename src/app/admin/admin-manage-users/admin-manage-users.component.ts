@@ -19,8 +19,8 @@ export class AdminManageUsersComponent implements OnInit {
 
   addNewAdmin = false;
 
-  users:any;
-  loggedUser!:User;
+  users: any;
+  loggedUser!: User;
 
   constructor(private authService: AuthService) { }
 
@@ -31,12 +31,10 @@ export class AdminManageUsersComponent implements OnInit {
 
 
   register(): void {
-
     const email = this.registerCreds.mail;
     const password1 = this.registerCreds.password1;
     const password2 = this.registerCreds.password2;
     const displayName = this.registerCreds.username;
-
 
     if (password1 === password2){
       console.log('tryin to register new user..');
@@ -44,7 +42,7 @@ export class AdminManageUsersComponent implements OnInit {
     }
   }
 
-  deleteUser(_id: string){
+  deleteUser(_id: string): void {
     this.authService.deleteUser(_id).subscribe(mes => mes);
   }
 

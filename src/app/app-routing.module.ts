@@ -17,6 +17,7 @@ import { AdminManageUsersComponent } from './admin/admin-manage-users/admin-mana
 import { LoginGuardGuard } from '@shared/guards/login-guard.guard';
 import { FishAngelComponent } from './fishes/fish-angel/fish-angel.component';
 import { AboutComponent } from './about/about.component';
+import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'welcome',
     component: WelcomeComponent
+  },
+  {
+    path: 'post/:id',
+    component: PostComponent
   },
   {
     path: 'fishes',

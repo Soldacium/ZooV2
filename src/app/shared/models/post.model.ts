@@ -8,5 +8,6 @@ export interface Post {
     summary: string;
     comments: Comment[];
     imageUrl: string;
-    hasEvent: Boolean;
+    hasEvent: boolean;
+    _id: string;
 }

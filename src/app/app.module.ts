@@ -34,7 +34,6 @@ import { LinksDiamondComponent } from './shared/components/links-diamond/links-d
 import { ButtonDiamondComponent } from './shared/components/button-diamond/button-diamond.component';
 import { WaterCornerComponent } from '@shared/components/water-corner/water-corner.component';
 import { SelectComponent } from './shared/components/select/select.component';
-import { PostComponent } from './shared/components/post/post.component';
 import { CalendarComponent } from './shared/components/calendar/calendar.component';
 import { PaginatorComponent } from '@shared/components/paginator/paginator.component';
 import { AuthInterceptor } from '@shared/interceptors/auth-interceptor';
@@ -72,7 +71,6 @@ import { FishAngelComponent } from './fishes/fish-angel/fish-angel.component';
     ButtonDiamondComponent,
     WaterCornerComponent,
     SelectComponent,
-    PostComponent,
     CalendarComponent,
     PaginatorComponent,
     AdminManageUsersComponent,

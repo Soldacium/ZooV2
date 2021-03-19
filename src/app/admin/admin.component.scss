@@ -47,4 +47,33 @@ nav{
         }
     }
 
+    button{
+        width: 4rem;
+        height: 4rem;
+        background-color: rgb(58, 58, 58);
+        position: absolute;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s;
+        left: 0;
+        bottom: 1rem;
+        cursor: pointer;
+
+        img{
+            height: 2rem;
+            width: 2rem;
+            filter: invert(50%);
+            transition: 0.2s;
+        }
+
+        &:hover{
+            background-color: rgb(110, 110, 110);
+            img{
+               filter: invert(100%); 
+            }  
+        }
+    }
+
 }

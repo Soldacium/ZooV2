@@ -14,7 +14,7 @@ export class AdminComponent implements OnInit {
   user!: User;
 
   constructor(private router: Router, private authService: AuthService) { }
-  
+
   ngOnInit(): void {
     this.user = this.authService.getUser();
   }
@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
     this.openNav = false;
   }
 
-  logout(){
+  logout(): void {
     this.authService.logout();
     this.router.navigateByUrl(`/login`);
   }
