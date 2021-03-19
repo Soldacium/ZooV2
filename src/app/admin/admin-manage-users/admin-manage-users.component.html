@@ -1,11 +1,19 @@
 <main>
     <div class="users-list">
-        <div class="user" *ngFor='let user of users | async'>
+        <div class="user" *ngFor='let user of users | async' [ngClass]='user.fullRights ? "admin": "regular"'>
             <div class="name">{{user.username}}</div>
             <div class="email">{{user.email}}</div>
-            <div class="rights">None</div>
-            <button class="del" (click)='deleteUser(user._id)' *ngIf='user.fullRights'>Delete</button>
-            <button class="change">Change</button>
+            <div class="rights" *ngIf='user.fullRights'>Admin</div>
+            <div class="rights" *ngIf='!user.fullRights'>Regular</div>
+            <div class="buttons">
+                <button class="change">
+                    <img src="../../../assets/icons/post-edit.svg" alt="">
+                </button> 
+                <button class="del" (click)='deleteUser(user._id)' *ngIf='loggedUser.fullRights'>
+                    <img src="../../../assets/icons/post-delete.svg" alt="">
+                </button>               
+            </div>
+
         </div>
     </div>
     <!-- USER CHANGE CREDENTIALS SHOULD BE HERE -->

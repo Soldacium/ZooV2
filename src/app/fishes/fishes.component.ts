@@ -11,7 +11,7 @@ import { slideInAnimation } from './animations';
   ]
 })
 export class FishesComponent {
-  routes = ['/fishes/fighting', '/fishes/golden', '/fishes/jelly', '/fishes/what'];
+  routes = ['/fishes/fighting', '/fishes/angel', '/fishes/jelly', '/fishes/golden'];
 
   prepareRoute(outlet: RouterOutlet): RouterOutlet {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;

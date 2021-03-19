@@ -1,0 +1,29 @@
+<main>
+    <div class="fish-display" [ngClass]="(more == false)?'naah':'active'">
+        <div class="fishImg shadow"></div>
+        <div class="fishImg"></div>
+        <div class="water"></div>
+        <div class="name">
+            <div>
+                Blue
+            </div>
+            <div>ANGEL</div>
+            <div>FISH</div>
+        </div>  
+        <button class="getMore" [ngClass]="(more==true)?'naah':'active'" (click)='more = !more'>
+            Learn more <img src="assets/icons/arrow-right.svg" alt="">
+        </button>
+    </div>
+    
+    <section class='fish-info' [ngClass]="(more == false)?'naah':'active'" >
+        <div class="content">
+            <button class="getMore"  (click)='more = !more'>
+                <img src="assets/icons/arrow-left.svg" alt=""> AAAAAAA
+            </button>
+        </div>
+    </section>  
+</main>
+
+
+
+

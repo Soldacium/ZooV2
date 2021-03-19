@@ -42,6 +42,7 @@ import { AuthService } from '@services/auth.service';
 import { PostsService } from '@services/posts.service';
 import { AdminManageUsersComponent } from './admin/admin-manage-users/admin-manage-users.component';
 import { NgxStripeModule } from 'ngx-stripe';
+import { FishAngelComponent } from './fishes/fish-angel/fish-angel.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { NgxStripeModule } from 'ngx-stripe';
     CalendarComponent,
     PaginatorComponent,
     AdminManageUsersComponent,
+    FishAngelComponent,
 
   ],
   imports: [

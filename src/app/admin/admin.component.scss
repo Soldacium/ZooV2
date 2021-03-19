@@ -10,65 +10,41 @@ main{
 } 
 nav{
     position: fixed;
-    left: -30vw;
+    left: 0vw;
     top: 0;
-    width: 30vw;
+    width: 4rem;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgb(46, 46, 46);
     transition: 0.5s ease;
     
     padding: 1rem 2rem;
     z-index: 100;
 
-    .user{
+    a{
+        width: 4rem;
+        height: 4rem;
+        background-color: rgb(58, 58, 58);
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
-        margin-bottom: 2rem;
+        align-items: center;
+        transition: 0.2s;
 
         img{
-            height: 4rem;
+            height: 2rem;
+            width: 2rem;
+            filter: invert(50%);
+            transition: 0.2s;
         }
 
-        .username{
-            margin: 0.5rem 0;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-    }
-    
-    app-button-three{
-        font-size: 1.3rem;
-        color: white;
-        text-decoration: none;
-    }
-
-    button{
-        position: absolute;
-        right: -2rem;
-        padding: 0.5rem;
-        background-color: var(--colorSecondary);
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        img{
-            transition: 0.3s;
-            height: 3rem;
-            filter: invert(100%);
-        }
-    }
-
-    &.visible{
-        left: 0;
-        button{
+        &.active{
+            background-color: rgb(110, 110, 110);
             img{
-                transform: rotate(180deg);
+                filter: invert(100%);
             }
         }
     }
+
 }

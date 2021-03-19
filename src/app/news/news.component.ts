@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from '@services/posts.service';
 import { Post } from '@shared/models/post.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-news',
@@ -27,8 +29,9 @@ export class NewsComponent implements OnInit {
   savedEvents: Array<object> = [];
 
 
-  posts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-  currentPost = -1;
+  posts: any = [];
+  currentPost!: Post;
+  openedPost = false;
 
 
   postComments = [
@@ -57,21 +60,23 @@ export class NewsComponent implements OnInit {
     hasEvent: false
   };
 
-  constructor() { }
+  constructor(private postsService: PostsService) { }
 
 
 
   ngOnInit() {
+    this.posts = this.postsService.getPosts();
     this.calendarSetup();
     this.eventsSetup();
   }
 
-  openPost(post: number){
+  openPost(post: Post){
     this.currentPost = post;
+    this.openedPost = true;
   }
 
   closePost(){
-    this.currentPost = -1;
+    this.openedPost = false;
   }
 
   postComment(){

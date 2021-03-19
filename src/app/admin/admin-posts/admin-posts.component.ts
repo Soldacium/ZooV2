@@ -15,7 +15,7 @@ export class AdminPostsComponent implements OnInit {
   viewMode = 2;
 
   // posts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-  posts!:any;
+  posts!: any;
 
   public imagePath!: string;
   imgURL: any;
@@ -53,8 +53,11 @@ export class AdminPostsComponent implements OnInit {
     this.posts = this.postsService.getPosts();
   }
 
-  openPost(post: number){
+  openPost(post: Post){
     
+    this.currentPost = post;
+    this.imgURL = post.imageUrl;
+    console.log(this.currentPost);
   }
 
   postPost(){

@@ -20,13 +20,13 @@ export class AdminManageUsersComponent implements OnInit {
   addNewAdmin = false;
 
   users:any;
-  user!:User;
+  loggedUser!:User;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.users = this.authService.getUsersFromDatabase();
-    this.user = this.authService.getUser();
+    this.loggedUser = this.authService.getUser();
   }
 
 

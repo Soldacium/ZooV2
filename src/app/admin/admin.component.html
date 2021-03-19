@@ -1,7 +1,8 @@
-<main [ngClass]="{'hidden': openNav}">
-    <router-outlet></router-outlet>
-</main>
-<nav [ngClass]="{'visible': openNav}">
+
+<router-outlet></router-outlet>
+
+<nav>
+    <!--
     <div class="user">
         <img src="../../assets/icons/user-admin.svg" *ngIf='user.fullRights'alt="">
         <img src="../../assets/icons/user.svg" *ngIf='!user.fullRights'alt="">
@@ -15,5 +16,19 @@
     <app-button-three [text]="'Logout'" (onclick)="logout()"></app-button-three>
     <button (click)='openNav = !openNav'>
         <img src="../../assets/icons/arrow-right.svg" alt="">
-    </button>
+    </button>        
+    -->
+    <a [routerLink]='["posts"]' routerLinkActive="active">
+        <img src="../../assets/icons/posts.svg" alt="">
+    </a>
+    <a [routerLink]='["orders"]' routerLinkActive="active">
+        <img src="../../assets/icons/orders.svg" alt="">
+    </a>
+    <a [routerLink]='["users"]' routerLinkActive="active">
+        <img src="../../assets/icons/users.svg" alt="">
+    </a>
+    <a [routerLink]='["options"]' routerLinkActive="active">
+        <img src="../../assets/icons/settings.svg" alt="">
+    </a>
+
 </nav>

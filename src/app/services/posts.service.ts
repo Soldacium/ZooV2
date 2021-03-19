@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Comment } from '@shared/models/comment.model';
 import { Post } from '@shared/models/post.model';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
@@ -31,8 +31,8 @@ export class PostsService {
 
 
   getPosts(){
-    return this.http.get('http://localhost:3000/api/posts/').pipe(
-      map((posts:any )=> {
+    return this.http.get<Post[]>('http://localhost:3000/api/posts/').pipe(
+      map((posts: Post[] )=> {
         return posts
         //this.events = res.events;
         //console.log(this.events)

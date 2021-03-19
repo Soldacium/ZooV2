@@ -42,7 +42,7 @@ app.use((req,res,next) => {
 })
 
 // for images
-// app.use("/images", express.static(path.join('backend/images')));
+app.use("/images", express.static(path.join('backend/images')));
 app.use('/api/auth',authRoutes);
 app.use('/api/posts',postsRoutes);
 
