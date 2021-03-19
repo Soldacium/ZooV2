@@ -1,6 +1,6 @@
 main{
     width: 100vw;
-    padding: 5rem 15%;
+    padding: 5rem calc(17% - 2rem);
     overflow-x: hidden;
     top: 0;
     left: 0;
@@ -59,7 +59,7 @@ main{
 }
 
 .section-title{
-    font-size: 8rem;
+    font-size: calc(3rem + 5vw);
     text-shadow: var(--smooth-shadow-big);
     color: white;
     margin: 0;
@@ -74,7 +74,7 @@ main{
 }
 
 app-calendar{
-    width: 60vw;
+    
 }
 
 .posts{
@@ -87,11 +87,11 @@ app-calendar{
 
     .post-search{
         width: 100%;
-        height: 4rem;
         background-color: var(--colorAccent);
         margin: 1rem;
         margin-bottom: 2rem;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
 
@@ -155,9 +155,9 @@ app-calendar{
     // into component  
     .post-thumbnail{
         display: flex;
-        flex: 1 1 35rem;
+        flex: 1 1 27rem;
         background-color: var(--colorSecondary);
-        height: 18rem;
+        height: calc(10rem + 5vw);
         margin: 1rem;
         position: relative;
 
@@ -193,6 +193,11 @@ app-calendar{
             background-color: var(--colorPrimary);
             transition: 0.3s;
             color: white;
+
+            .text{
+                width: 100%;
+                overflow: hidden;
+            }
 
             >img{
                 position: relative;
@@ -264,6 +269,12 @@ app-calendar{
         top: 0;
     }
 
+}
+
+@media screen and (max-width: 1000px){
+    .section-title{
+        display: none;
+    }
 }
 
 

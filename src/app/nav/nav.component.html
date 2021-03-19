@@ -1,9 +1,9 @@
 
 <nav>
-    <a href="">Animals</a>
-    <a href="">About</a>
-    <a href="">News</a>
-    <a href="">Tickets</a>
+    <a [routerLink]='["fishes/fighting"]'>Animals</a>
+    <a [routerLink]='["about"]'>About</a>
+    <a [routerLink]='["news"]'>News</a>
+    <a [routerLink]='["tickets"]'>Tickets</a>
     <div class="hamburger" (click)='change()'
     [ngClass]="active ? 'active' : 'naah' ">
         <span></span>

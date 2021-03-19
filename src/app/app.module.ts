@@ -18,7 +18,7 @@ import { FishGoldenComponent } from './fishes/fish-golden/fish-golden.component'
 import { ButtonFancyComponent } from './shared/components/button-fancy/button-fancy.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FishJellyComponent } from './fishes/fish-jelly/fish-jelly.component';
 import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
@@ -41,7 +41,7 @@ import { AuthInterceptor } from '@shared/interceptors/auth-interceptor';
 import { AuthService } from '@services/auth.service';
 import { PostsService } from '@services/posts.service';
 import { AdminManageUsersComponent } from './admin/admin-manage-users/admin-manage-users.component';
-
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [
@@ -74,7 +74,7 @@ import { AdminManageUsersComponent } from './admin/admin-manage-users/admin-mana
     PostComponent,
     CalendarComponent,
     PaginatorComponent,
-    AdminManageUsersComponent
+    AdminManageUsersComponent,
 
   ],
   imports: [
@@ -82,7 +82,9 @@ import { AdminManageUsersComponent } from './admin/admin-manage-users/admin-mana
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    NgxStripeModule.forRoot('pk_test_51Hop6HFynbvUfMqYZr5Ql1zxsXr29TysrPh4Vwb8KBUMIE2Bae2Fj0y3SK9xWQTtuarwrd8nopd5MEzsFF0CDFtc003ISeu1la'),
     QuillModule.forRoot()
   ],
   providers: [

@@ -53,25 +53,30 @@
                 </div>
             </div>
         </div>
-        <div class="phase" [style.right]='(currentPhase - 2) * 100  + "%"' >
-            <div class="payment-options">
-                <div class="type">Anytime
-                    <img src="assets/icons/birds.svg" alt="" class="background">
-                </div>
-                <div class="type">Reserve seat for event
-                    <img src="assets/icons/calendar.svg" alt="" class="background">
-                    
-                </div>
-                <div class="write">
+        <div class="phase payment" [style.right]='(currentPhase - 2) * 100  + "%"' >
+            <form #loginform='ngForm'>
+                <app-input 
+                [label]="'Email'" 
+                [placeholder]="'Email'" 
+                [(inputModel)]="name" 
+                [type]="'email'"
+                [darkMode]='false'></app-input>
 
-                </div>
-            </div>
+                <ngx-stripe-card
+                    [options]="cardOptions"
+                    [elementsOptions]="elementsOptions"
+                ></ngx-stripe-card>
+                <button type="submit">
+                    CREATE TOKEN
+                </button>
+
+            </form>
         </div>
         <div class="tickets-arrows">
-            <button class="arrow" (click)='prevPhase()' [disabled]='currentPhase == 0'>
+            <button class="arrow" (click)='prevPhase()' [disabled]='currentPhase === 0'>
                 <img src="assets/icons/arrow-left.svg" alt="">
             </button>
-            <button class="arrow" (click)='nextPhase()' [disabled]='currentPhase == 2'>
+            <button class="arrow" (click)='nextPhase()' [disabled]='currentPhase === 2'>
                 <img src="assets/icons/arrow-right.svg" alt="">
             </button>
         </div>

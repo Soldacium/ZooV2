@@ -338,3 +338,9 @@ section{
         }
     }
 }
+
+.payment{
+    ngx-stripe-card{
+        height: 30vh;
+    }
+}

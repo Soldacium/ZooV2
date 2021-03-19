@@ -15,7 +15,7 @@
         display: flex;
         position: absolute;
         flex-direction: column;
-        left: -4rem;
+        left: calc(-3rem - 1vw);
         top: 60%;
         transform: translate(-50%,-50%) rotate(180deg);
         writing-mode: vertical-lr;
@@ -59,7 +59,7 @@
     }
 
     .calendar-wrap{
-        width: 50%;
+        
         height: 40vh;
         position: relative;
         background-color: rgba(255, 235, 205, 0);
@@ -91,7 +91,7 @@
 
             .day{
                 display: flex;
-                flex: 1 1 13%;
+                flex: 1 1 12.5%;
                 height: 20%;
                 position: relative;
                 background-color: var(--colorAccent);

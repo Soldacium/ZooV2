@@ -180,3 +180,11 @@ canvas{
     .overlay.visible li:nth-of-type(5){
         animation-delay:  .40s;
     }
+
+@media screen and (max-width: 800px){
+    nav{
+        a{
+            display: none;
+        }
+    }
+}

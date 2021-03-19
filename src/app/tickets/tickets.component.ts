@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Ticket } from '@shared/models/ticket.model';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { StripeService, StripeCardComponent } from 'ngx-stripe';
+import {
+  StripeCardElementOptions,
+  StripeElementsOptions
+} from '@stripe/stripe-js';
 
 @Component({
   selector: 'app-tickets',
@@ -8,17 +14,17 @@ import { Ticket } from '@shared/models/ticket.model';
 })
 export class TicketsComponent implements OnInit {
 
+  @ViewChild(StripeCardComponent) card!: StripeCardComponent;
+
   currentOption = -1;
-  currentPhase = 0;
+  currentPhase = 2;
   ticketType = -1;
 
   options = {
     name: '',
     email: '',
     phone: ''
-  }
-
-  constructor() { }
+  };
 
   ticketOptions: Ticket[] = [
     {
@@ -84,35 +90,76 @@ export class TicketsComponent implements OnInit {
 
   ];
 
+  cardOptions: StripeCardElementOptions = {
+    style: {
+      base: {
+        iconColor: '#666EE8',
+        color: '#31325F',
+        fontWeight: '300',
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        fontSize: '18px',
+        '::placeholder': {
+          color: '#CFD7E0'
+        }
+      }
+    }
+  };
+
+  elementsOptions: StripeElementsOptions = {
+    locale: 'en'
+  };
+
+  name: string = '';
+
+  constructor( private stripeService: StripeService) { }
+
   ngOnInit(): void {
   }
 
-  chooseOption(number: number): void {
-    if(this.currentOption == number){
-      this.currentOption = -1;
-    } else {
-      this.currentOption = number;
+  createToken(): void {
+
+
+
+    this.stripeService
+      .createToken(this.card.element, { name: this.name })
+      .subscribe((result) => {
+        if (result.token) {
+          // Use the token
+          console.log(result.token.id);
+        } else if (result.error) {
+          // Error creating the token
+          console.log(result.error.message);
+        }
+      });
     }
-  }
+
+  chooseOption(number: number): void {
+      if(this.currentOption == number){
+        this.currentOption = -1;
+      } else {
+        this.currentOption = number;
+      }
+    }
 
   chooseTicketType(number: number){
-    if(this.ticketType == number){
-      this.ticketType = -1;
-    } else {
-      this.ticketType = number;
+      if (this.ticketType == number){
+        this.ticketType = -1;
+      } else {
+        this.ticketType = number;
+      }
     }
-  }
 
   prevPhase(): void{
-    if(this.currentPhase > 0){
-      this.currentPhase -= 1;
+      if(this.currentPhase > 0){
+        this.currentPhase -= 1;
+      }
     }
-  } 
 
   nextPhase(): void{
-    if(this.currentPhase < 2){
-      this.currentPhase += 1;
+      if(this.currentPhase < 2){
+        this.currentPhase += 1;
+      }
     }
-  }
+
 
 }
